@@ -73,6 +73,7 @@
     <Content Include="app\assets\images\ng-nl.png" />
     <Content Include="app\assets\images\ng-vegas.png" />
     <Content Include="app\events\events-list.component.html" />
+    <Content Include="app\nav\navbar.component.html" />
     <Content Include="favicon.ico" />
     <Content Include="index.html" />
     <Content Include="packages.config" />
@@ -101,6 +102,7 @@
     <TypeScriptCompile Include="app\events\event-thumbnail.component.ts" />
     <TypeScriptCompile Include="app\events\events-list.component.ts" />
     <TypeScriptCompile Include="app\main.ts" />
+    <TypeScriptCompile Include="app\nav\navbar.component.ts" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />

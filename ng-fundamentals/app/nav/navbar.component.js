@@ -6,16 +6,16 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require("@angular/core");
-var EventsAppComponent = (function () {
-    function EventsAppComponent() {
+var NavBarComponent = (function () {
+    function NavBarComponent() {
     }
-    return EventsAppComponent;
+    return NavBarComponent;
 }());
-EventsAppComponent = __decorate([
+NavBarComponent = __decorate([
     core_1.Component({
-        selector: 'events-app',
-        template: "\n        <nav-bar></nav-bar>\n        <events-list></events-list>\n    "
+        selector: 'nav-bar',
+        templateUrl: 'app/nav/navbar.component.html'
     })
-], EventsAppComponent);
-exports.EventsAppComponent = EventsAppComponent;
-//# sourceMappingURL=events-app.component.js.map
+], NavBarComponent);
+exports.NavBarComponent = NavBarComponent;
+//# sourceMappingURL=navbar.component.js.map

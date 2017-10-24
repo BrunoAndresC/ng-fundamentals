@@ -65,7 +65,17 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\assets\images\angularconnect-shield.png" />
+    <Content Include="app\assets\images\basic-shield.png" />
+    <Content Include="app\assets\images\ng-conf.png" />
+    <Content Include="app\assets\images\ng-nl.png" />
+    <Content Include="app\assets\images\ng-vegas.png" />
+    <Content Include="favicon.ico" />
+    <Content Include="index.html" />
     <Content Include="packages.config" />
+    <Content Include="readme.MD" />
+    <Content Include="tsconfig.json" />
+    <Content Include="package.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -74,6 +84,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="styles.css" />
+    <Content Include="systemjs.config.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

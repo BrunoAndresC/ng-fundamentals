@@ -9,6 +9,7 @@
     "removeComments": false,
     "noImplicitAny": false,
     "lib": [ "es2015", "dom" ],
+    "skipLibCheck": true,
     "suppressImplicitAnyIndexErrors": true,
     "typeRoots": [
       "./node_modules/@types/"

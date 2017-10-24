@@ -25,3 +25,12 @@ Here we have 2 different errors in the output.
 The error "error TS18003" can be fixed adding an empty ts file inside the app folder. In my case I added an empty app.module.ts file.
 The errors "error TS2304" can be fixed adding the line '"lib": [ "es2015", "dom" ],' to the tsconfig.json
 
+2 - When running "npm run tsc" I got the following error:
+
+node_modules/rxjs/Subject.d.ts(16,22): error TS2415: Class 'Subject<T>' incorrectly extends base class 'Observable<T>'.
+  Types of property 'lift' are incompatible.
+.............................................................................................
+.............................................................................................
+.............................................................................................
+
+This issue can be fixed adding the line "skipLibCheck": true to the tsconfig.json

@@ -6,19 +6,16 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require("@angular/core");
-var platform_browser_1 = require("@angular/platform-browser");
-var events_app_component_1 = require("./events-app.component");
-var AppModule = (function () {
-    function AppModule() {
+var EventsAppComponent = (function () {
+    function EventsAppComponent() {
     }
-    return AppModule;
+    return EventsAppComponent;
 }());
-AppModule = __decorate([
-    core_1.NgModule({
-        imports: [platform_browser_1.BrowserModule],
-        declarations: [events_app_component_1.EventsAppComponent],
-        bootstrap: [events_app_component_1.EventsAppComponent]
+EventsAppComponent = __decorate([
+    core_1.Component({
+        selector: 'events-app',
+        template: '<h2>Hiii</h2>'
     })
-], AppModule);
-exports.AppModule = AppModule;
-//# sourceMappingURL=app.module.js.map
+], EventsAppComponent);
+exports.EventsAppComponent = EventsAppComponent;
+//# sourceMappingURL=events-app.component.js.map

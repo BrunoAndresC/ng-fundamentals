@@ -98,6 +98,7 @@
   <ItemGroup>
     <TypeScriptCompile Include="app\app.module.ts" />
     <TypeScriptCompile Include="app\events-app.component.ts" />
+    <TypeScriptCompile Include="app\events\event-thumbnail.component.ts" />
     <TypeScriptCompile Include="app\events\events-list.component.ts" />
     <TypeScriptCompile Include="app\main.ts" />
   </ItemGroup>

@@ -2,7 +2,38 @@
 
 @Component({
     selector: 'events-list',
-    templateUrl: 'app/events/events-list.component.html'
+    template: `
+    <div>
+        <h1>Angular events</h1>
+        <hr/>
+        <event-thumbnail             
+            [event]="event1">
+        </event-thumbnail>        
+    </div>
+`
+//    template: `
+//    <div>
+//        <h1>Angular events</h1>
+//        <hr/>
+//        <event-thumbnail 
+//            #thumbnail
+//            [event]="event1">
+//        </event-thumbnail>
+//        <h3>{{thumbnail.someProperty}}</h3>
+//        <button class="btn btn-primary" (click)="thumbnail.logFoo()">Log me</button>
+//    </div>
+//`
+//    template: `
+//    <div>
+//        <h1>Angular events</h1>
+//        <hr/>
+//        <event-thumbnail 
+//            (eventClick)="handleEventClicked($event)" 
+//            [event]="event1">
+//        </event-thumbnail>
+//    </div>
+//`
+//    templateUrl: 'app/events/events-list.component.html'
 //    template: `
 //    <div>
 //        <h1>Angular events</h1>
@@ -22,7 +53,7 @@
 //` 
 })
 export class EventsListComponent {
-    event = {
+    event1 = {
         id: 1,
         name: 'Angular content',
         date: '9/26/2036',
@@ -35,4 +66,8 @@ export class EventsListComponent {
             country: 'England'
         }
     }
+
+    //handleEventClicked(data) {
+    //    console.log('Received:', data);
+    //}
 }

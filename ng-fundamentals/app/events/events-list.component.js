@@ -8,7 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var core_1 = require("@angular/core");
 var EventsListComponent = (function () {
     function EventsListComponent() {
-        this.event = {
+        this.event1 = {
             id: 1,
             name: 'Angular content',
             date: '9/26/2036',
@@ -21,13 +21,16 @@ var EventsListComponent = (function () {
                 country: 'England'
             }
         };
+        //handleEventClicked(data) {
+        //    console.log('Received:', data);
+        //}
     }
     return EventsListComponent;
 }());
 EventsListComponent = __decorate([
     core_1.Component({
         selector: 'events-list',
-        templateUrl: 'app/events/events-list.component.html'
+        template: "\n    <div>\n        <h1>Angular events</h1>\n        <hr/>\n        <event-thumbnail             \n            [event]=\"event1\">\n        </event-thumbnail>        \n    </div>\n"
     })
 ], EventsListComponent);
 exports.EventsListComponent = EventsListComponent;

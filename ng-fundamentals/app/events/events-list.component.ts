@@ -55,7 +55,7 @@
 export class EventsListComponent {
     event1 = {
         id: 1,
-        name: 'Angular content',
+        name: 'Angular Connect',
         date: '9/26/2036',
         time: '11:00 am',
         price: '699.99',

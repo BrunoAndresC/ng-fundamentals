@@ -25,6 +25,7 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <TypeScriptToolsVersion>2.1</TypeScriptToolsVersion>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -98,9 +99,11 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="app\app.module.ts" />
+    <TypeScriptCompile Include="app\common\toastr.service.ts" />
     <TypeScriptCompile Include="app\events-app.component.ts" />
     <TypeScriptCompile Include="app\events\event-thumbnail.component.ts" />
     <TypeScriptCompile Include="app\events\events-list.component.ts" />
+    <TypeScriptCompile Include="app\events\shared\event.service.ts" />
     <TypeScriptCompile Include="app\main.ts" />
     <TypeScriptCompile Include="app\nav\navbar.component.ts" />
   </ItemGroup>

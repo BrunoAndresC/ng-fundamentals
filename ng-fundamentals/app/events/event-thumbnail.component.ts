@@ -14,7 +14,10 @@
                 <span>{{event.location.city}}, {{event.location.country}}</span>
             </div>            
         </div>    
-`
+        `,
+    styles: [`
+        .thumbnail { min-height: 210px; }
+    `]
 //    template: `    
 //        <div class="well hoverwell thumbnail">
 //            <h2>{{event.name}}</h2>

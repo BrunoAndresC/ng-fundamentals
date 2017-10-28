@@ -34,3 +34,9 @@ node_modules/rxjs/Subject.d.ts(16,22): error TS2415: Class 'Subject<T>' incorrec
 .............................................................................................
 
 This issue can be fixed adding the line "skipLibCheck": true to the tsconfig.json
+
+TO START THE APP IN THE CONSOLE:
+
+cd "D:\Shared\Proyectos\PluralSight\Angular 2 Fundamentals\ng-fundamentals\ng-fundamentals"
+
+"npm start"

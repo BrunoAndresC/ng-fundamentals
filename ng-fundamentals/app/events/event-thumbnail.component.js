@@ -21,7 +21,7 @@ var EventThumbnailComponent = /** @class */ (function () {
         core_1.Component({
             selector: 'event-thumbnail',
             template: "    \n        <div [routerLink]=\"['/events', event.id]\" class=\"well hoverwell thumbnail\">\n            <h2>{{event?.name}}</h2>\n            <div>Date: {{event?.date}}</div>\n            <div>Time: {{event?.time}}</div>\n            <div [ngSwitch]=\"event?.time\">\n                <span *ngSwitchCase=\"'8:00 am'\">Early Start</span>\n                <span *ngSwitchCase=\"'10:00 am'\">Late Start</span>\n                <span *ngSwitchDefault>Normal Start</span>\n            </div>\n            <div>Price: ${{event?.price}}</div>\n            <div [hidden]=\"!event?.location\">\n                <span>Location: {{event?.location?.address}}</span>\n                <span>&nbsp;</span>\n                <span>{{event?.location?.city}}, {{event?.location?.country}}</span>\n            </div>\n            <div *ngIf=\"event?.onlineUrl\">\n                Online URL: {{event?.onlineUrl}}\n            </div>\n        </div>    \n        ",
-            styles: ["\n        .thumbnail { min-height: 210px; }\n    "]
+            styles: ["\n        .thumbnail { min-height: 250px; }\n    "]
             //    template: `    
             //        <div class="well hoverwell thumbnail">
             //            <h2>{{event.name}}</h2>

@@ -24,7 +24,7 @@
         </div>    
         `,
     styles: [`
-        .thumbnail { min-height: 210px; }
+        .thumbnail { min-height: 250px; }
     `]
 //    template: `    
 //        <div class="well hoverwell thumbnail">

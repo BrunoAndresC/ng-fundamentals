@@ -7,6 +7,7 @@ import { EventsListComponent } from './events/events-list.component';
 import { EventThumbnailComponent } from './events/event-thumbnail.component';
 import { NavBarComponent } from './nav/navbar.component';
 import { EventDetailsComponent } from './events/event-details/event-details.component';
+import { EventCreateComponent } from './events/event-create.component';
 
 import { EventService } from './events/shared/event.service';
 import { ToastrService } from './common/toastr.service';
@@ -23,7 +24,8 @@ import { appRoutes } from './routes';
         EventsListComponent,
         EventThumbnailComponent,
         NavBarComponent,
-        EventDetailsComponent
+        EventDetailsComponent,
+        EventCreateComponent
     ],
     providers: [EventService, ToastrService],
     bootstrap: [EventsAppComponent]

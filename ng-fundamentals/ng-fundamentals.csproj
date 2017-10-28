@@ -102,6 +102,7 @@
     <TypeScriptCompile Include="app\app.module.ts" />
     <TypeScriptCompile Include="app\common\toastr.service.ts" />
     <TypeScriptCompile Include="app\events-app.component.ts" />
+    <TypeScriptCompile Include="app\events\event-create.component.ts" />
     <TypeScriptCompile Include="app\events\event-details\event-details.component.ts" />
     <TypeScriptCompile Include="app\events\event-thumbnail.component.ts" />
     <TypeScriptCompile Include="app\events\events-list.component.ts" />

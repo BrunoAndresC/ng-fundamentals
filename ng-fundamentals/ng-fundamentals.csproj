@@ -101,9 +101,11 @@
   <ItemGroup>
     <TypeScriptCompile Include="app\app.module.ts" />
     <TypeScriptCompile Include="app\common\toastr.service.ts" />
+    <TypeScriptCompile Include="app\errors\404.component.ts" />
     <TypeScriptCompile Include="app\events-app.component.ts" />
     <TypeScriptCompile Include="app\events\event-create.component.ts" />
     <TypeScriptCompile Include="app\events\event-details\event-details.component.ts" />
+    <TypeScriptCompile Include="app\events\event-details\event-route-activator.service.ts" />
     <TypeScriptCompile Include="app\events\event-thumbnail.component.ts" />
     <TypeScriptCompile Include="app\events\events-list.component.ts" />
     <TypeScriptCompile Include="app\events\shared\event.service.ts" />

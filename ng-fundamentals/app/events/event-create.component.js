@@ -8,23 +8,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
-var EventCreateComponent = /** @class */ (function () {
+var EventCreateComponent = (function () {
     function EventCreateComponent(router) {
         this.router = router;
+        this.isDirty = true;
     }
     EventCreateComponent.prototype.cancelClick = function () {
         this.router.navigate(['/events']);
     };
-    EventCreateComponent = __decorate([
-        core_1.Component({
-            template: "\n        <h1>New Event</h1>\n        <hr>\n        <div class=\"col-md-6\">\n            <h3>[Create Event will go here]</h3>\n            <br/>\n            <br/>\n            <button type=\"submit\" class=\"btn btn-primary\">Save</button>\n            <button type=\"button\" class=\"btn btn-default\" (click)=\"cancelClick()\">Cancel</button>\n        </div>\n    "
-        }),
-        __metadata("design:paramtypes", [router_1.Router])
-    ], EventCreateComponent);
     return EventCreateComponent;
 }());
+EventCreateComponent = __decorate([
+    core_1.Component({
+        template: "\n        <h1>New Event</h1>\n        <hr>\n        <div class=\"col-md-6\">\n            <h3>[Create Event will go here]</h3>\n            <br/>\n            <br/>\n            <button type=\"submit\" class=\"btn btn-primary\">Save</button>\n            <button type=\"button\" class=\"btn btn-default\" (click)=\"cancelClick()\">Cancel</button>\n        </div>\n    "
+    }),
+    __metadata("design:paramtypes", [router_1.Router])
+], EventCreateComponent);
 exports.EventCreateComponent = EventCreateComponent;
 //# sourceMappingURL=event-create.component.js.map

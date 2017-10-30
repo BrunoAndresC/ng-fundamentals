@@ -5,7 +5,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var router_1 = require("@angular/router");
@@ -15,31 +14,51 @@ var event_thumbnail_component_1 = require("./events/event-thumbnail.component");
 var navbar_component_1 = require("./nav/navbar.component");
 var event_details_component_1 = require("./events/event-details/event-details.component");
 var event_create_component_1 = require("./events/event-create.component");
+var _404_component_1 = require("./errors/404.component");
+var event_route_activator_service_1 = require("./events/event-details/event-route-activator.service");
 var event_service_1 = require("./events/shared/event.service");
 var toastr_service_1 = require("./common/toastr.service");
 var routes_1 = require("./routes");
-var AppModule = /** @class */ (function () {
+var AppModule = (function () {
     function AppModule() {
     }
-    AppModule = __decorate([
-        core_1.NgModule({
-            imports: [
-                platform_browser_1.BrowserModule,
-                router_1.RouterModule.forRoot(routes_1.appRoutes)
-            ],
-            declarations: [
-                events_app_component_1.EventsAppComponent,
-                events_list_component_1.EventsListComponent,
-                event_thumbnail_component_1.EventThumbnailComponent,
-                navbar_component_1.NavBarComponent,
-                event_details_component_1.EventDetailsComponent,
-                event_create_component_1.EventCreateComponent
-            ],
-            providers: [event_service_1.EventService, toastr_service_1.ToastrService],
-            bootstrap: [events_app_component_1.EventsAppComponent]
-        })
-    ], AppModule);
     return AppModule;
 }());
+AppModule = __decorate([
+    core_1.NgModule({
+        imports: [
+            platform_browser_1.BrowserModule,
+            router_1.RouterModule.forRoot(routes_1.appRoutes)
+        ],
+        declarations: [
+            events_app_component_1.EventsAppComponent,
+            events_list_component_1.EventsListComponent,
+            event_thumbnail_component_1.EventThumbnailComponent,
+            navbar_component_1.NavBarComponent,
+            event_details_component_1.EventDetailsComponent,
+            event_create_component_1.EventCreateComponent,
+            _404_component_1.Error404Component
+        ],
+        providers: [
+            event_service_1.EventService,
+            toastr_service_1.ToastrService,
+            event_route_activator_service_1.EventRouteActivator,
+            {
+                provide: 'canDeactivateEventCreate',
+                useValue: checkDirtyState
+            }
+        ],
+        bootstrap: [events_app_component_1.EventsAppComponent]
+    })
+], AppModule);
 exports.AppModule = AppModule;
+function checkDirtyState(component) {
+    //return false;
+    if (component.isDirty) {
+        return window.confirm('You have not saved this event, do you really want to cancel ?');
+    }
+    else {
+        return true;
+    }
+}
 //# sourceMappingURL=app.module.js.map

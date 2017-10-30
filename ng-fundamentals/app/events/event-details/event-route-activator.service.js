@@ -8,28 +8,33 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var router_1 = require("@angular/router");
 var core_1 = require("@angular/core");
 var event_service_1 = require("../shared/event.service");
-var router_1 = require("@angular/router");
-var EventDetailsComponent = (function () {
-    function EventDetailsComponent(eventService, route) {
+var EventRouteActivator = (function () {
+    function EventRouteActivator(eventService, router) {
         this.eventService = eventService;
-        this.route = route;
+        this.router = router;
     }
-    EventDetailsComponent.prototype.ngOnInit = function () {
-        //this.event = this.eventService.getEvent(1);
-        var id = +this.route.snapshot.params['id'];
-        this.event = this.eventService.getEvent(id);
+    EventRouteActivator.prototype.canActivate = function (route) {
+        var eventExists = !!this.eventService.getEvent(+route.params['id']);
+        if (!eventExists) {
+            this.router.navigate(['/404']);
+        }
+        else {
+            return eventExists;
+        }
+        //if (!eventExists) {
+        //    this.router.navigate(['/404']);        
+        //    return eventExists;
+        //}
     };
-    return EventDetailsComponent;
+    return EventRouteActivator;
 }());
-EventDetailsComponent = __decorate([
-    core_1.Component({
-        templateUrl: '/app/events/event-details/event-details.component.html',
-        styles: ["\n        .container { padding-left: 20px; padding-right: 20px; }\n        .event-image { height: 100px; }\n    "]
-    }),
+EventRouteActivator = __decorate([
+    core_1.Injectable(),
     __metadata("design:paramtypes", [event_service_1.EventService,
-        router_1.ActivatedRoute])
-], EventDetailsComponent);
-exports.EventDetailsComponent = EventDetailsComponent;
-//# sourceMappingURL=event-details.component.js.map
+        router_1.Router])
+], EventRouteActivator);
+exports.EventRouteActivator = EventRouteActivator;
+//# sourceMappingURL=event-route-activator.service.js.map

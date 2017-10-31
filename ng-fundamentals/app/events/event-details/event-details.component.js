@@ -8,10 +8,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var event_service_1 = require("../shared/event.service");
 var router_1 = require("@angular/router");
-var EventDetailsComponent = (function () {
+var EventDetailsComponent = /** @class */ (function () {
     function EventDetailsComponent(eventService, route) {
         this.eventService = eventService;
         this.route = route;
@@ -21,15 +22,15 @@ var EventDetailsComponent = (function () {
         var id = +this.route.snapshot.params['id'];
         this.event = this.eventService.getEvent(id);
     };
+    EventDetailsComponent = __decorate([
+        core_1.Component({
+            templateUrl: '/app/events/event-details/event-details.component.html',
+            styles: ["\n        .container { padding-left: 20px; padding-right: 20px; }\n        .event-image { height: 100px; }\n    "]
+        }),
+        __metadata("design:paramtypes", [event_service_1.EventService,
+            router_1.ActivatedRoute])
+    ], EventDetailsComponent);
     return EventDetailsComponent;
 }());
-EventDetailsComponent = __decorate([
-    core_1.Component({
-        templateUrl: '/app/events/event-details/event-details.component.html',
-        styles: ["\n        .container { padding-left: 20px; padding-right: 20px; }\n        .event-image { height: 100px; }\n    "]
-    }),
-    __metadata("design:paramtypes", [event_service_1.EventService,
-        router_1.ActivatedRoute])
-], EventDetailsComponent);
 exports.EventDetailsComponent = EventDetailsComponent;
 //# sourceMappingURL=event-details.component.js.map

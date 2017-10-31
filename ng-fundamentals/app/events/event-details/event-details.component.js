@@ -13,6 +13,7 @@ var core_1 = require("@angular/core");
 var event_service_1 = require("../shared/event.service");
 var router_1 = require("@angular/router");
 var EventDetailsComponent = /** @class */ (function () {
+    //event: any;
     function EventDetailsComponent(eventService, route) {
         this.eventService = eventService;
         this.route = route;

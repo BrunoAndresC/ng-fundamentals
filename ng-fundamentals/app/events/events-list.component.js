@@ -13,6 +13,7 @@ var core_1 = require("@angular/core");
 var event_service_1 = require("./shared/event.service");
 var toastr_service_1 = require("../common/toastr.service");
 var EventsListComponent = /** @class */ (function () {
+    //events: any[];
     function EventsListComponent(eventService, toastrService) {
         this.eventService = eventService;
         this.toastrService = toastrService;

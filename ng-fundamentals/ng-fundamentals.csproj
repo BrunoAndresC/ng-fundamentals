@@ -108,7 +108,9 @@
     <TypeScriptCompile Include="app\events\event-details\event-route-activator.service.ts" />
     <TypeScriptCompile Include="app\events\event-thumbnail.component.ts" />
     <TypeScriptCompile Include="app\events\events-list.component.ts" />
+    <TypeScriptCompile Include="app\events\shared\event.model.ts" />
     <TypeScriptCompile Include="app\events\shared\event.service.ts" />
+    <TypeScriptCompile Include="app\events\shared\index.ts" />
     <TypeScriptCompile Include="app\main.ts" />
     <TypeScriptCompile Include="app\nav\navbar.component.ts" />
     <TypeScriptCompile Include="app\routes.ts" />

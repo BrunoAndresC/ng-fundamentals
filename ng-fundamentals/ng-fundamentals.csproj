@@ -76,6 +76,7 @@
     <Content Include="app\events\event-details\event-details.component.html" />
     <Content Include="app\events\events-list.component.html" />
     <Content Include="app\nav\navbar.component.html" />
+    <Content Include="app\user\login.component.html" />
     <Content Include="favicon.ico" />
     <Content Include="index.html" />
     <Content Include="packages.config" />
@@ -114,6 +115,7 @@
     <TypeScriptCompile Include="app\main.ts" />
     <TypeScriptCompile Include="app\nav\navbar.component.ts" />
     <TypeScriptCompile Include="app\routes.ts" />
+    <TypeScriptCompile Include="app\user\login.component.ts" />
     <TypeScriptCompile Include="app\user\profile.component.ts" />
     <TypeScriptCompile Include="app\user\user.module.ts" />
     <TypeScriptCompile Include="app\user\user.routes.ts" />

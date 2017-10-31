@@ -4,14 +4,16 @@ import { RouterModule } from '@angular/router';
 
 import { userRoutes } from './user.routes';
 import { ProfileComponent } from './profile.component';
+import { LoginComponent } from './login.component';
 
-NgModule({
+@NgModule({
     imports: [
         CommonModule,
         RouterModule.forChild(userRoutes)
     ],
     declarations: [
-        ProfileComponent
+        ProfileComponent,
+        LoginComponent
     ],
     providers: [
     ]

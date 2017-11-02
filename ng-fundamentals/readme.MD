@@ -40,3 +40,61 @@ TO START THE APP IN THE CONSOLE:
 cd "D:\Shared\Proyectos\PluralSight\Angular 2 Fundamentals\ng-fundamentals\ng-fundamentals"
 
 "npm start"
+
+***login.component.html***
+
+<div class="row">
+    <div class="col-md-2" style="padding-left:30px">
+        loginForm.valid:<br />
+        loginForm.invalid:<br />
+        loginForm.dirty:<br />
+        loginForm.pristine:<br />
+        loginForm.touched:<br />
+        loginForm.untouched:<br />
+        loginForm.submitted:<br />
+    </div>
+    <div class="col-md-2" style="padding-left:30px">
+        {{loginForm.valid}}<br />
+        {{loginForm.invalid}}<br />
+        {{loginForm.dirty}}<br />
+        {{loginForm.pristine}}<br />
+        {{loginForm.touched}}<br />
+        {{loginForm.untouched}}<br />
+        {{loginForm.submitted}}<br />
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4" style="padding-left:30px">
+        loginForm.controls.userName.valid:<br />
+        loginForm.controls.userName.invalid:<br />
+        loginForm.controls.userName.dirty:<br />
+        loginForm.controls.userName.pristine:<br />
+        loginForm.controls.userName.touched:<br />
+        loginForm.controls.userName.untouched:<br />
+        <br />
+        <br />
+        loginForm.controls.password.valid:<br />
+        loginForm.controls.password.invalid:<br />
+        loginForm.controls.password.dirty:<br />
+        loginForm.controls.password.pristine:<br />
+        loginForm.controls.password.touched:<br />
+        loginForm.controls.password.untouched:<br />
+    </div>
+    <div class="col-md-4" style="padding-left:30px">
+        {{loginForm.controls.userName?.valid}}<br />
+        {{loginForm.controls.userName?.invalid}}<br />
+        {{loginForm.controls.userName?.dirty}}<br />
+        {{loginForm.controls.userName?.pristine}}<br />
+        {{loginForm.controls.userName?.touched}}<br />
+        {{loginForm.controls.userName?.untouched}}<br />
+        <br />
+        <br />
+        {{loginForm.controls.password?.valid}}<br />
+        {{loginForm.controls.password?.invalid}}<br />
+        {{loginForm.controls.password?.dirty}}<br />
+        {{loginForm.controls.password?.pristine}}<br />
+        {{loginForm.controls.password?.touched}}<br />
+        {{loginForm.controls.password?.untouched}}<br />
+    </div>
+</div>

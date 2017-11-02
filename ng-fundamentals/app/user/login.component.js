@@ -27,7 +27,8 @@ var LoginComponent = /** @class */ (function () {
     };
     LoginComponent = __decorate([
         core_1.Component({
-            templateUrl: 'app/user/login.component.html'
+            templateUrl: 'app/user/login.component.html',
+            styles: ["\n        em { float: right; color: #E05C65; padding-left: 10px; }\n    "]
         }),
         __metadata("design:paramtypes", [auth_service_1.AuthService,
             router_1.Router])

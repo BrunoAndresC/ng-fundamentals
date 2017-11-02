@@ -41,60 +41,6 @@ cd "D:\Shared\Proyectos\PluralSight\Angular 2 Fundamentals\ng-fundamentals\ng-fu
 
 "npm start"
 
-***login.component.html***
+The "login.component.html" is a template driven form, meaning we built the whole form and the validation in the html itself.
 
-<div class="row">
-    <div class="col-md-2" style="padding-left:30px">
-        loginForm.valid:<br />
-        loginForm.invalid:<br />
-        loginForm.dirty:<br />
-        loginForm.pristine:<br />
-        loginForm.touched:<br />
-        loginForm.untouched:<br />
-        loginForm.submitted:<br />
-    </div>
-    <div class="col-md-2" style="padding-left:30px">
-        {{loginForm.valid}}<br />
-        {{loginForm.invalid}}<br />
-        {{loginForm.dirty}}<br />
-        {{loginForm.pristine}}<br />
-        {{loginForm.touched}}<br />
-        {{loginForm.untouched}}<br />
-        {{loginForm.submitted}}<br />
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-md-4" style="padding-left:30px">
-        loginForm.controls.userName.valid:<br />
-        loginForm.controls.userName.invalid:<br />
-        loginForm.controls.userName.dirty:<br />
-        loginForm.controls.userName.pristine:<br />
-        loginForm.controls.userName.touched:<br />
-        loginForm.controls.userName.untouched:<br />
-        <br />
-        <br />
-        loginForm.controls.password.valid:<br />
-        loginForm.controls.password.invalid:<br />
-        loginForm.controls.password.dirty:<br />
-        loginForm.controls.password.pristine:<br />
-        loginForm.controls.password.touched:<br />
-        loginForm.controls.password.untouched:<br />
-    </div>
-    <div class="col-md-4" style="padding-left:30px">
-        {{loginForm.controls.userName?.valid}}<br />
-        {{loginForm.controls.userName?.invalid}}<br />
-        {{loginForm.controls.userName?.dirty}}<br />
-        {{loginForm.controls.userName?.pristine}}<br />
-        {{loginForm.controls.userName?.touched}}<br />
-        {{loginForm.controls.userName?.untouched}}<br />
-        <br />
-        <br />
-        {{loginForm.controls.password?.valid}}<br />
-        {{loginForm.controls.password?.invalid}}<br />
-        {{loginForm.controls.password?.dirty}}<br />
-        {{loginForm.controls.password?.pristine}}<br />
-        {{loginForm.controls.password?.touched}}<br />
-        {{loginForm.controls.password?.untouched}}<br />
-    </div>
-</div>
+The "profile.component.html" is a reactive form (aka: model driven form), define the fields and validations in the component and then wire up them in the template.

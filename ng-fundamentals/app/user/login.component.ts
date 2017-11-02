@@ -6,4 +6,8 @@
 })
 export class LoginComponent {
 
+    login(formValues) {
+        console.log(formValues);
+    }
+
 }

@@ -9,6 +9,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var common_1 = require("@angular/common");
 var router_1 = require("@angular/router");
+var forms_1 = require("@angular/forms");
 var user_routes_1 = require("./user.routes");
 var profile_component_1 = require("./profile.component");
 var login_component_1 = require("./login.component");
@@ -19,6 +20,7 @@ var UserModule = /** @class */ (function () {
         core_1.NgModule({
             imports: [
                 common_1.CommonModule,
+                forms_1.FormsModule,
                 router_1.RouterModule.forChild(user_routes_1.userRoutes)
             ],
             declarations: [

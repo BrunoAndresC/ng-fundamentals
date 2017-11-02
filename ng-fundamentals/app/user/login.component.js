@@ -10,6 +10,9 @@ var core_1 = require("@angular/core");
 var LoginComponent = /** @class */ (function () {
     function LoginComponent() {
     }
+    LoginComponent.prototype.login = function (formValues) {
+        console.log(formValues);
+    };
     LoginComponent = __decorate([
         core_1.Component({
             templateUrl: 'app/user/login.component.html'

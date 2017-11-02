@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var events_list_component_1 = require("./events/events-list.component");
 var event_details_component_1 = require("./events/event-details/event-details.component");
 var event_create_component_1 = require("./events/event-create.component");
@@ -15,5 +16,8 @@ exports.appRoutes = [
     { path: '404', component: _404_component_1.Error404Component },
     { path: '', redirectTo: '/events', pathMatch: 'full' },
     { path: 'user', loadChildren: function () { return user_module_1.UserModule; } } // Anonymous function syntax
+    //{ path: 'user', loadChildren: exportUserModule }                              // Not Anonymous function syntax     
+    //{ path: 'user', loadChildren: () => System.import('./user/user.module') }     // Angular 2.0.x syntax    
+    //{ path: 'user', loadChildren: 'app/user/user.module#UserModule' }             // Angular 4.0.x syntax
 ];
 //# sourceMappingURL=routes.js.map

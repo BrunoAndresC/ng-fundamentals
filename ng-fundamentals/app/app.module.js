@@ -19,6 +19,7 @@ var _404_component_1 = require("./errors/404.component");
 var event_route_activator_service_1 = require("./events/event-details/event-route-activator.service");
 var event_service_1 = require("./events/shared/event.service");
 var toastr_service_1 = require("./common/toastr.service");
+var auth_service_1 = require("./user/auth.service");
 var routes_1 = require("./routes");
 var AppModule = /** @class */ (function () {
     function AppModule() {
@@ -45,7 +46,8 @@ var AppModule = /** @class */ (function () {
                 {
                     provide: 'canDeactivateEventCreate',
                     useValue: checkDirtyState
-                }
+                },
+                auth_service_1.AuthService
             ],
             bootstrap: [events_app_component_1.EventsAppComponent]
         })

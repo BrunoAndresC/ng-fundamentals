@@ -25,7 +25,8 @@ var ProfileComponent = /** @class */ (function () {
         //    firstName: firstName,
         //    lastName: lastName
         //});
-        this.firstName = new forms_1.FormControl(this.authService.currentUser.firstName, forms_1.Validators.required);
+        //this.firstName = new FormControl(this.authService.currentUser.firstName, Validators.required);
+        this.firstName = new forms_1.FormControl(this.authService.currentUser.firstName, [forms_1.Validators.required, forms_1.Validators.pattern('[a-zA-Z].*')]);
         this.lastName = new forms_1.FormControl(this.authService.currentUser.lastName, forms_1.Validators.required);
         this.profileForm = new forms_1.FormGroup({
             firstName: this.firstName,

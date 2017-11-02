@@ -19,23 +19,40 @@ var ProfileComponent = /** @class */ (function () {
         this.router = router;
     }
     ProfileComponent.prototype.ngOnInit = function () {
-        var firstName = new forms_1.FormControl(this.authService.currentUser.firstName);
-        var lastName = new forms_1.FormControl(this.authService.currentUser.lastName);
+        //let firstName = new FormControl(this.authService.currentUser.firstName, Validators.required);
+        //let lastName = new FormControl(this.authService.currentUser.lastName, Validators.required);
+        //this.profileForm = new FormGroup({
+        //    firstName: firstName,
+        //    lastName: lastName
+        //});
+        this.firstName = new forms_1.FormControl(this.authService.currentUser.firstName, forms_1.Validators.required);
+        this.lastName = new forms_1.FormControl(this.authService.currentUser.lastName, forms_1.Validators.required);
         this.profileForm = new forms_1.FormGroup({
-            firstName: firstName,
-            lastName: lastName
+            firstName: this.firstName,
+            lastName: this.lastName
         });
     };
     ProfileComponent.prototype.cancel = function () {
         this.router.navigate(['events']);
     };
     ProfileComponent.prototype.saveProfile = function (formValues) {
-        this.authService.updateCurrentUser(formValues.firstName, formValues.lastName);
-        this.router.navigate(['events']);
+        if (this.profileForm.valid) {
+            this.authService.updateCurrentUser(formValues.firstName, formValues.lastName);
+            this.router.navigate(['events']);
+        }
+    };
+    ProfileComponent.prototype.validateFirstName = function () {
+        //profileForm.controls.firstName.invalid && profileForm.controls.firstName.touched;
+        return this.firstName.valid || this.firstName.untouched;
+    };
+    ProfileComponent.prototype.validateLastName = function () {
+        //profileForm.controls.lastName.invalid && profileForm.controls.lastName.touched;
+        return this.lastName.valid || this.lastName.untouched;
     };
     ProfileComponent = __decorate([
         core_1.Component({
-            templateUrl: 'app/user/profile.component.html'
+            templateUrl: 'app/user/profile.component.html',
+            styles: ["\n        em { float: right; color: #E05C65; padding-left: 10px; }\n        .error input { background-color: #E3C3C5; }\n        .error ::-webkit-input-placeholder { color: #999; }\n    "]
             //template: `
             //    <h1>Edit your profile</h1>
             //    <hr>

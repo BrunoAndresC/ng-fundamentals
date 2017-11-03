@@ -11,19 +11,40 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
+var index_1 = require("./shared/index");
 var EventCreateComponent = /** @class */ (function () {
-    function EventCreateComponent(router) {
+    function EventCreateComponent(router, eventService) {
         this.router = router;
+        this.eventService = eventService;
         this.isDirty = true;
     }
     EventCreateComponent.prototype.cancelClick = function () {
         this.router.navigate(['/events']);
     };
+    EventCreateComponent.prototype.saveEvent = function (formValues) {
+        console.log(formValues);
+        this.eventService.saveEvent(formValues);
+        this.isDirty = false;
+        this.router.navigate(['/events']);
+    };
     EventCreateComponent = __decorate([
         core_1.Component({
-            template: "\n        <h1>New Event</h1>\n        <hr>\n        <div class=\"col-md-6\">\n            <h3>[Create Event will go here]</h3>\n            <br/>\n            <br/>\n            <button type=\"submit\" class=\"btn btn-primary\">Save</button>\n            <button type=\"button\" class=\"btn btn-default\" (click)=\"cancelClick()\">Cancel</button>\n        </div>\n    "
+            templateUrl: 'app/events/event-create.component.html',
+            styles: ["\n        em { float: right; color: #E05C65; padding-left: 10px; }\n        .error input { background-color: #E3C3C5; }\n        .error ::-webkit-input-placeholder { color: #999; }\n    "]
+            //template: `
+            //    <h1>New Event</h1>
+            //    <hr>
+            //    <div class="col-md-6">
+            //        <h3>[Create Event will go here]</h3>
+            //        <br/>
+            //        <br/>
+            //        <button type="submit" class="btn btn-primary">Save</button>
+            //        <button type="button" class="btn btn-default" (click)="cancelClick()">Cancel</button>
+            //    </div>
+            //`
         }),
-        __metadata("design:paramtypes", [router_1.Router])
+        __metadata("design:paramtypes", [router_1.Router,
+            index_1.EventService])
     ], EventCreateComponent);
     return EventCreateComponent;
 }());

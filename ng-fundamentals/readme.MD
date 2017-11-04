@@ -44,3 +44,13 @@ cd "D:\Shared\Proyectos\PluralSight\Angular 2 Fundamentals\ng-fundamentals\ng-fu
 The "login.component.html" is a template driven form, meaning we built the whole form and the validation in the html itself.
 
 The "profile.component.html" is a reactive form (aka: model driven form), define the fields and validations in the component and then wire up them in the template.
+
+
+
+This is not supported
+
+[(ngModel)]="details?.firstname"
+Changing it to
+
+[ngModel]="details?.firstname" (ngModelChange)="details.firstname = $event"
+

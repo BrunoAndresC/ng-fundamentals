@@ -22,29 +22,49 @@ var EventService = /** @class */ (function () {
     //getEvent(id: number) {
     //    return EVENTS.find(event => event.id === id);
     //}
+    //saveEvent(event) {
+    //    //console.log(this.find(event.eventId, EVENTS));
+    //    //let resultArray = this.find(event.eventId, EVENTS);
+    //    //if (resultArray.length <= 0)
+    //    if (EVENTS.findIndex((obj => obj.id == event.eventId)) === -1)  //Returns the index of the found element, else -1.
+    //    {
+    //        //Insert
+    //        event.id = 999;
+    //        event.session = [];
+    //        EVENTS.push(event);
+    //    }
+    //    else {
+    //        //Find index of specific object using findIndex method.    
+    //        let objIndex = EVENTS.findIndex((obj => obj.id == event.eventId));
+    //        //Log object to Console.
+    //        console.log("Before update: ", EVENTS[objIndex]);
+    //        //Update object's name property.
+    //        EVENTS[objIndex].name = event.name;
+    //        EVENTS[objIndex].date = event.date;
+    //        EVENTS[objIndex].time = event.time;
+    //        EVENTS[objIndex].price = event.price;
+    //        //Log object to console again.
+    //        console.log("After update: ", EVENTS[objIndex])
+    //    }
+    //}
     EventService.prototype.saveEvent = function (event) {
-        //console.log(this.find(event.eventId, EVENTS));
-        //let resultArray = this.find(event.eventId, EVENTS);
-        //if (resultArray.length <= 0)
-        if (EVENTS.findIndex((function (obj) { return obj.id == event.eventId; })) === -1) {
-            //Insert
-            event.id = 999;
-            event.session = [];
-            EVENTS.push(event);
-        }
-        else {
-            //Find index of specific object using findIndex method.    
-            var objIndex = EVENTS.findIndex((function (obj) { return obj.id == event.eventId; }));
-            //Log object to Console.
-            console.log("Before update: ", EVENTS[objIndex]);
-            //Update object's name property.
-            EVENTS[objIndex].name = event.name;
-            EVENTS[objIndex].date = event.date;
-            EVENTS[objIndex].time = event.time;
-            EVENTS[objIndex].price = event.price;
-            //Log object to console again.
-            console.log("After update: ", EVENTS[objIndex]);
-        }
+        //Insert
+        event.id = 999;
+        event.session = [];
+        EVENTS.push(event);
+    };
+    EventService.prototype.updateEvent = function (event) {
+        //Find index of specific object using findIndex method.    
+        var objIndex = EVENTS.findIndex((function (obj) { return obj.id == event.eventId; }));
+        //Log object to Console.
+        console.log("Before update: ", EVENTS[objIndex]);
+        //Update object's name property.
+        EVENTS[objIndex].name = event.name;
+        EVENTS[objIndex].date = event.date;
+        EVENTS[objIndex].time = event.time;
+        EVENTS[objIndex].price = event.price;
+        //Log object to console again.
+        console.log("After update: ", EVENTS[objIndex]);
     };
     EventService = __decorate([
         core_1.Injectable()

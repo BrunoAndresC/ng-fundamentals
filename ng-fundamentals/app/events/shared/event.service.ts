@@ -20,33 +20,57 @@ export class EventService {
     //    return EVENTS.find(event => event.id === id);
     //}
 
-    saveEvent(event) {
-        //console.log(this.find(event.eventId, EVENTS));
-        //let resultArray = this.find(event.eventId, EVENTS);
-        //if (resultArray.length <= 0)
-        if (EVENTS.findIndex((obj => obj.id == event.eventId)) === -1)  //Returns the index of the found element, else -1.
-        {
-            //Insert
-            event.id = 999;
-            event.session = [];
-            EVENTS.push(event);
-        }
-        else {
-            //Find index of specific object using findIndex method.    
-            let objIndex = EVENTS.findIndex((obj => obj.id == event.eventId));
+    //saveEvent(event) {
+    //    //console.log(this.find(event.eventId, EVENTS));
+    //    //let resultArray = this.find(event.eventId, EVENTS);
+    //    //if (resultArray.length <= 0)
+    //    if (EVENTS.findIndex((obj => obj.id == event.eventId)) === -1)  //Returns the index of the found element, else -1.
+    //    {
+    //        //Insert
+    //        event.id = 999;
+    //        event.session = [];
+    //        EVENTS.push(event);
+    //    }
+    //    else {
+    //        //Find index of specific object using findIndex method.    
+    //        let objIndex = EVENTS.findIndex((obj => obj.id == event.eventId));
 
-            //Log object to Console.
-            console.log("Before update: ", EVENTS[objIndex]);
+    //        //Log object to Console.
+    //        console.log("Before update: ", EVENTS[objIndex]);
 
-            //Update object's name property.
-            EVENTS[objIndex].name = event.name;
-            EVENTS[objIndex].date = event.date;
-            EVENTS[objIndex].time = event.time;
-            EVENTS[objIndex].price = event.price;
+    //        //Update object's name property.
+    //        EVENTS[objIndex].name = event.name;
+    //        EVENTS[objIndex].date = event.date;
+    //        EVENTS[objIndex].time = event.time;
+    //        EVENTS[objIndex].price = event.price;
 
-            //Log object to console again.
-            console.log("After update: ", EVENTS[objIndex])
-        }
+    //        //Log object to console again.
+    //        console.log("After update: ", EVENTS[objIndex])
+    //    }
+    //}
+
+    saveEvent(event) {        
+        //Insert
+        event.id = 999;
+        event.session = [];
+        EVENTS.push(event);
+    }
+
+    updateEvent(event) {
+        //Find index of specific object using findIndex method.    
+        let objIndex = EVENTS.findIndex((obj => obj.id == event.eventId));
+
+        //Log object to Console.
+        console.log("Before update: ", EVENTS[objIndex]);
+
+        //Update object's name property.
+        EVENTS[objIndex].name = event.name;
+        EVENTS[objIndex].date = event.date;
+        EVENTS[objIndex].time = event.time;
+        EVENTS[objIndex].price = event.price;
+
+        //Log object to console again.
+        console.log("After update: ", EVENTS[objIndex])
     }
 
     //find(valueToFind, theArray) {

@@ -26,7 +26,7 @@
 <h1>Edit Event</h1>
 <hr>
 <div class="col-md-6">
-    <form #newEventForm="ngForm" (ngSubmit)="saveEvent(newEventForm.value)" autocomplete="off" novalidate>
+    <form #newEventForm="ngForm" (ngSubmit)="updateEvent(newEventForm.value)" autocomplete="off" novalidate>
         <div class="form-group">
             <label for="eventId">Event Id:</label>
             <input name="eventId" type="text" class="form-control" [(ngModel)]="event.id" [readOnly]="true" />

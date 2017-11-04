@@ -13,26 +13,31 @@ var core_1 = require("@angular/core");
 var event_service_1 = require("../shared/event.service");
 var router_1 = require("@angular/router");
 var EventDetailsComponent = /** @class */ (function () {
-    //event: any;
     function EventDetailsComponent(eventService, route, router) {
         this.eventService = eventService;
         this.route = route;
         this.router = router;
+        //event: any;
+        this.isDirty = true;
     }
     EventDetailsComponent.prototype.ngOnInit = function () {
         //this.event = this.eventService.getEvent(1);
         var id = +this.route.snapshot.params['id'];
         this.event = this.eventService.getEvent(id);
     };
-    EventDetailsComponent.prototype.saveEvent = function (formValues) {
+    EventDetailsComponent.prototype.updateEvent = function (formValues) {
         console.log(formValues);
-        this.eventService.saveEvent(formValues);
+        this.eventService.updateEvent(formValues);
+        this.isDirty = false;
+        this.router.navigate(['/events']);
+    };
+    EventDetailsComponent.prototype.cancelClick = function () {
         this.router.navigate(['/events']);
     };
     EventDetailsComponent = __decorate([
         core_1.Component({
             templateUrl: '/app/events/event-details/event-details.component.html',
-            styles: ["\n        .container { padding-left: 20px; padding-right: 20px; }\n        .event-image { height: 100px; }\n    "]
+            styles: ["\n        .container { padding-left: 20px; padding-right: 20px; }\n        .event-image { height: 100px; }\n        em { float: right; color: #E05C65; padding-left: 10px; }\n        .error input { background-color: #E3C3C5; }\n        .error ::-webkit-input-placeholder { color: #999; }\n    "]
         }),
         __metadata("design:paramtypes", [event_service_1.EventService,
             router_1.ActivatedRoute,

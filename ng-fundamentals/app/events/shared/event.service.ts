@@ -21,10 +21,43 @@ export class EventService {
     //}
 
     saveEvent(event) {
-        event.id = 999;
-        event.session = [];
-        EVENTS.push(event);
+        //console.log(this.find(event.eventId, EVENTS));
+        //let resultArray = this.find(event.eventId, EVENTS);
+        //if (resultArray.length <= 0)
+        if (EVENTS.findIndex((obj => obj.id == event.eventId)) === -1)  //Returns the index of the found element, else -1.
+        {
+            //Insert
+            event.id = 999;
+            event.session = [];
+            EVENTS.push(event);
+        }
+        else {
+            //Find index of specific object using findIndex method.    
+            let objIndex = EVENTS.findIndex((obj => obj.id == event.eventId));
+
+            //Log object to Console.
+            console.log("Before update: ", EVENTS[objIndex]);
+
+            //Update object's name property.
+            EVENTS[objIndex].name = event.name;
+            EVENTS[objIndex].date = event.date;
+            EVENTS[objIndex].time = event.time;
+            EVENTS[objIndex].price = event.price;
+
+            //Log object to console again.
+            console.log("After update: ", EVENTS[objIndex])
+        }
     }
+
+    //find(valueToFind, theArray) {
+    //    var results = [];
+    //    var idx = theArray.indexOf(valueToFind);
+    //    while (idx != -1) {
+    //        results.push(idx);
+    //        idx = theArray.indexOf(valueToFind, idx + 1);
+    //    }
+    //    return results;
+    //}
 }
 
 const EVENTS: IEvent[] = [

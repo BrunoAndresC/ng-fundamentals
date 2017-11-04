@@ -14,14 +14,20 @@ var event_service_1 = require("../shared/event.service");
 var router_1 = require("@angular/router");
 var EventDetailsComponent = /** @class */ (function () {
     //event: any;
-    function EventDetailsComponent(eventService, route) {
+    function EventDetailsComponent(eventService, route, router) {
         this.eventService = eventService;
         this.route = route;
+        this.router = router;
     }
     EventDetailsComponent.prototype.ngOnInit = function () {
         //this.event = this.eventService.getEvent(1);
         var id = +this.route.snapshot.params['id'];
         this.event = this.eventService.getEvent(id);
+    };
+    EventDetailsComponent.prototype.saveEvent = function (formValues) {
+        console.log(formValues);
+        this.eventService.saveEvent(formValues);
+        this.router.navigate(['/events']);
     };
     EventDetailsComponent = __decorate([
         core_1.Component({
@@ -29,7 +35,8 @@ var EventDetailsComponent = /** @class */ (function () {
             styles: ["\n        .container { padding-left: 20px; padding-right: 20px; }\n        .event-image { height: 100px; }\n    "]
         }),
         __metadata("design:paramtypes", [event_service_1.EventService,
-            router_1.ActivatedRoute])
+            router_1.ActivatedRoute,
+            router_1.Router])
     ], EventDetailsComponent);
     return EventDetailsComponent;
 }());

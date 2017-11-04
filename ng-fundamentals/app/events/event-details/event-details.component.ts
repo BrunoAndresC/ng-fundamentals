@@ -1,6 +1,6 @@
 ﻿import { Component, OnInit } from '@angular/core';
 import { EventService } from '../shared/event.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { IEvent } from '../shared/index';
 
 @Component({
@@ -15,7 +15,8 @@ export class EventDetailsComponent implements OnInit {
     //event: any;
 
     constructor(private eventService: EventService,
-                private route: ActivatedRoute
+                private route: ActivatedRoute,
+                private router: Router
     ) {
 
     }
@@ -25,5 +26,12 @@ export class EventDetailsComponent implements OnInit {
 
         let id = +this.route.snapshot.params['id'];
         this.event = this.eventService.getEvent(id);
+    }
+
+    saveEvent(formValues) {
+        console.log(formValues);
+        this.eventService.saveEvent(formValues);
+        
+        this.router.navigate(['/events']);
     }
 }

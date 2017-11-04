@@ -45,7 +45,7 @@ The "login.component.html" is a template driven form, meaning we built the whole
 
 The "profile.component.html" is a reactive form (aka: model driven form), define the fields and validations in the component and then wire up them in the template.
 
-
+*************************************************************************
 
 This is not supported
 
@@ -54,3 +54,16 @@ Changing it to
 
 [ngModel]="details?.firstname" (ngModelChange)="details.firstname = $event"
 
+*************************************************************************
+
+function find(needle, haystack) {
+    var results = [];
+    var idx = haystack.indexOf(needle);
+    while (idx != -1) {
+        results.push(idx);
+        idx = haystack.indexOf(needle, idx + 1);
+    }
+    return results;
+}
+
+usage	--->	console.log(find(10,scores)); // [0, 3]

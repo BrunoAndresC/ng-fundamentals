@@ -75,6 +75,7 @@
     <Content Include="app\assets\images\ng-vegas.png" />
     <Content Include="app\events\event-create.component.html" />
     <Content Include="app\events\event-details\event-details.component.html" />
+    <Content Include="app\events\event-details\session-create.component.html" />
     <Content Include="app\events\events-list.component.html" />
     <Content Include="app\nav\navbar.component.html" />
     <Content Include="app\user\login.component.html" />
@@ -109,11 +110,13 @@
     <TypeScriptCompile Include="app\events\event-create.component.ts" />
     <TypeScriptCompile Include="app\events\event-details\event-details.component.ts" />
     <TypeScriptCompile Include="app\events\event-details\event-route-activator.service.ts" />
+    <TypeScriptCompile Include="app\events\event-details\session-create.component.ts" />
     <TypeScriptCompile Include="app\events\event-thumbnail.component.ts" />
     <TypeScriptCompile Include="app\events\events-list.component.ts" />
     <TypeScriptCompile Include="app\events\shared\event.model.ts" />
     <TypeScriptCompile Include="app\events\shared\event.service.ts" />
     <TypeScriptCompile Include="app\events\shared\index.ts" />
+    <TypeScriptCompile Include="app\events\shared\restricted-words.validator.ts" />
     <TypeScriptCompile Include="app\main.ts" />
     <TypeScriptCompile Include="app\nav\navbar.component.ts" />
     <TypeScriptCompile Include="app\routes.ts" />

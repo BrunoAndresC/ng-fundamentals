@@ -17,6 +17,7 @@ var navbar_component_1 = require("./nav/navbar.component");
 var event_details_component_1 = require("./events/event-details/event-details.component");
 var event_create_component_1 = require("./events/event-create.component");
 var _404_component_1 = require("./errors/404.component");
+var session_create_component_1 = require("./events/event-details/session-create.component");
 var event_route_activator_service_1 = require("./events/event-details/event-route-activator.service");
 var event_service_1 = require("./events/shared/event.service");
 var toastr_service_1 = require("./common/toastr.service");
@@ -40,7 +41,8 @@ var AppModule = /** @class */ (function () {
                 navbar_component_1.NavBarComponent,
                 event_details_component_1.EventDetailsComponent,
                 event_create_component_1.EventCreateComponent,
-                _404_component_1.Error404Component
+                _404_component_1.Error404Component,
+                session_create_component_1.SessionCreateComponent
             ],
             providers: [
                 event_service_1.EventService,

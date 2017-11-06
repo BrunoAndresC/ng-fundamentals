@@ -11,6 +11,7 @@ import { EventDetailsComponent } from './events/event-details/event-details.comp
 import { EventCreateComponent } from './events/event-create.component';
 import { Error404Component } from './errors/404.component';
 import { SessionCreateComponent } from './events/event-details/session-create.component';
+import { SessionListComponent } from './events/event-details/session-list.component';
 
 import { EventRouteActivator } from './events/event-details/event-route-activator.service';
 import { EventService } from './events/shared/event.service';
@@ -34,7 +35,8 @@ import { appRoutes } from './routes';
         EventDetailsComponent,
         EventCreateComponent,
         Error404Component,
-        SessionCreateComponent
+        SessionCreateComponent,
+        SessionListComponent
     ],
     providers: [
         EventService,

@@ -28,7 +28,7 @@ export class EventCreateComponent {
 
     }
 
-    cancelClick() {
+    cancel() {
         this.router.navigate(['/events']);
     }
 

@@ -18,7 +18,7 @@ var EventCreateComponent = /** @class */ (function () {
         this.eventService = eventService;
         this.isDirty = true;
     }
-    EventCreateComponent.prototype.cancelClick = function () {
+    EventCreateComponent.prototype.cancel = function () {
         this.router.navigate(['/events']);
     };
     EventCreateComponent.prototype.saveEvent = function (formValues) {

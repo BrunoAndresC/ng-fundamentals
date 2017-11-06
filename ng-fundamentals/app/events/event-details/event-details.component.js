@@ -31,7 +31,7 @@ var EventDetailsComponent = /** @class */ (function () {
         this.isDirty = false;
         this.router.navigate(['/events']);
     };
-    EventDetailsComponent.prototype.cancelClick = function () {
+    EventDetailsComponent.prototype.cancel = function () {
         this.router.navigate(['/events']);
     };
     EventDetailsComponent = __decorate([

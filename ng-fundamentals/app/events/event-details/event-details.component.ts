@@ -39,7 +39,7 @@ export class EventDetailsComponent implements OnInit {
         this.router.navigate(['/events']);
     }
 
-    cancelClick() {
+    cancel() {
         this.router.navigate(['/events']);
     }
 }

@@ -64,10 +64,11 @@ export class EventService {
         console.log("Before update: ", EVENTS[objIndex]);
 
         //Update object's name property.
-        EVENTS[objIndex].name = event.name;
-        EVENTS[objIndex].date = event.date;
-        EVENTS[objIndex].time = event.time;
-        EVENTS[objIndex].price = event.price;
+        //EVENTS[objIndex].name = event.name;
+        //EVENTS[objIndex].date = event.date;
+        //EVENTS[objIndex].time = event.time;
+        //EVENTS[objIndex].price = event.price;
+        EVENTS[objIndex] = event;
 
         //Log object to console again.
         console.log("After update: ", EVENTS[objIndex])

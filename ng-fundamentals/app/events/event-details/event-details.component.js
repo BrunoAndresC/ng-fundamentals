@@ -34,10 +34,23 @@ var EventDetailsComponent = /** @class */ (function () {
     EventDetailsComponent.prototype.cancel = function () {
         this.router.navigate(['/events']);
     };
+    EventDetailsComponent.prototype.addSession = function () {
+        this.addMode = true;
+    };
+    EventDetailsComponent.prototype.saveNewSession = function (session) {
+        var nextId = Math.max.apply(null, this.event.sessions.map(function (session) { return session.id; }));
+        session.id = nextId + 1;
+        this.event.sessions.push(session);
+        this.eventService.updateEvent(this.event);
+        this.addMode = false;
+    };
+    EventDetailsComponent.prototype.cancelAddSession = function () {
+        this.addMode = false;
+    };
     EventDetailsComponent = __decorate([
         core_1.Component({
             templateUrl: '/app/events/event-details/event-details.component.html',
-            styles: ["\n        .container { padding-left: 20px; padding-right: 20px; }\n        .event-image { height: 100px; }\n        em { float: right; color: #E05C65; padding-left: 10px; }\n        .error input { background-color: #E3C3C5; }\n        .error ::-webkit-input-placeholder { color: #999; }\n    "]
+            styles: ["\n        .container { padding-left: 20px; padding-right: 20px; }\n        .event-image { height: 100px; }\n        em { float: right; color: #E05C65; padding-left: 10px; }\n        .error input { background-color: #E3C3C5; }\n        .error ::-webkit-input-placeholder { color: #999; }\n        a { cursor: pointer }\n    "]
         }),
         __metadata("design:paramtypes", [event_service_1.EventService,
             router_1.ActivatedRoute,

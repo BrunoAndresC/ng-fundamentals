@@ -17,6 +17,7 @@ import { EventRouteActivator } from './events/event-details/event-route-activato
 import { EventService } from './events/shared/event.service';
 import { ToastrService } from './common/toastr.service';
 import { AuthService } from './user/auth.service';
+import { CollapsibleWellComponent } from './common/collapsible-well.component';
 
 import { appRoutes } from './routes';
 
@@ -36,7 +37,8 @@ import { appRoutes } from './routes';
         EventCreateComponent,
         Error404Component,
         SessionCreateComponent,
-        SessionListComponent
+        SessionListComponent,
+        CollapsibleWellComponent
     ],
     providers: [
         EventService,

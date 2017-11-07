@@ -108,6 +108,7 @@
     <TypeScriptCompile Include="app\common\collapsible-well.component.ts" />
     <TypeScriptCompile Include="app\common\index.ts" />
     <TypeScriptCompile Include="app\common\jQuery.service.ts" />
+    <TypeScriptCompile Include="app\common\simpleModal.component.ts" />
     <TypeScriptCompile Include="app\common\toastr.service.ts" />
     <TypeScriptCompile Include="app\errors\404.component.ts" />
     <TypeScriptCompile Include="app\events-app.component.ts" />

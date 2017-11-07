@@ -49,13 +49,18 @@ var AppModule = /** @class */ (function () {
                 _404_component_1.Error404Component,
                 session_create_component_1.SessionCreateComponent,
                 session_list_component_1.SessionListComponent,
-                index_1.CollapsibleWellComponent
+                index_1.CollapsibleWellComponent,
+                index_1.SimpleModalComponent
             ],
             providers: [
                 event_service_1.EventService,
                 {
                     provide: index_1.TOASTR_TOKEN,
                     useValue: toastr
+                },
+                {
+                    provide: index_1.JQ_TOKEN,
+                    useValue: jQuery
                 },
                 //ToastrService,
                 event_route_activator_service_1.EventRouteActivator,

@@ -18,7 +18,7 @@ import { EventService } from './events/shared/event.service';
 //import { ToastrService } from './common/toastr.service';
 //import { TOASTR_TOKEN } from './common/toastr.service';
 //import { TOASTR_TOKEN, Toastr } from './common/toastr.service';
-import { JQ_TOKEN, TOASTR_TOKEN, Toastr, CollapsibleWellComponent } from './common/index';
+import { JQ_TOKEN, TOASTR_TOKEN, Toastr, CollapsibleWellComponent, SimpleModalComponent } from './common/index';
 import { AuthService } from './user/auth.service';
 //import { CollapsibleWellComponent } from './common/collapsible-well.component';
 
@@ -45,13 +45,18 @@ declare let jQuery: Object;
         Error404Component,
         SessionCreateComponent,
         SessionListComponent,
-        CollapsibleWellComponent
+        CollapsibleWellComponent,
+        SimpleModalComponent
     ],
     providers: [
         EventService,
         {
             provide: TOASTR_TOKEN,
             useValue: toastr
+        },
+        {
+            provide: JQ_TOKEN,
+            useValue: jQuery
         },
         //ToastrService,
         EventRouteActivator, // Shorthand

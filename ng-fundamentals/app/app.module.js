@@ -23,11 +23,11 @@ var event_route_activator_service_1 = require("./events/event-details/event-rout
 var event_service_1 = require("./events/shared/event.service");
 //import { ToastrService } from './common/toastr.service';
 //import { TOASTR_TOKEN } from './common/toastr.service';
-var toastr_service_1 = require("./common/toastr.service");
+//import { TOASTR_TOKEN, Toastr } from './common/toastr.service';
+var index_1 = require("./common/index");
 var auth_service_1 = require("./user/auth.service");
-var collapsible_well_component_1 = require("./common/collapsible-well.component");
+//import { CollapsibleWellComponent } from './common/collapsible-well.component';
 var routes_1 = require("./routes");
-//declare let toastr: any;
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -49,12 +49,12 @@ var AppModule = /** @class */ (function () {
                 _404_component_1.Error404Component,
                 session_create_component_1.SessionCreateComponent,
                 session_list_component_1.SessionListComponent,
-                collapsible_well_component_1.CollapsibleWellComponent
+                index_1.CollapsibleWellComponent
             ],
             providers: [
                 event_service_1.EventService,
                 {
-                    provide: toastr_service_1.TOASTR_TOKEN,
+                    provide: index_1.TOASTR_TOKEN,
                     useValue: toastr
                 },
                 //ToastrService,

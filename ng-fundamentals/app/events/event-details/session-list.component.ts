@@ -1,5 +1,7 @@
 ﻿import { Component, Input } from '@angular/core';
 import { ISession } from '../shared/index';
+import { AuthService } from '../../user/auth.service';
+import { VoterService } from './voter.service';
 
 @Component({
     selector: 'session-list',
@@ -8,4 +10,22 @@ import { ISession } from '../shared/index';
 })
 export class SessionListComponent {
     @Input() sessions: ISession[];
+
+    constructor(private authService: AuthService,
+                private voterService: VoterService) {
+
+    }
+
+    toggleVote(session: ISession) {
+        if (this.userHasVoted(session)) {
+            this.voterService.deleteVoter(session, this.authService.currentUser.userName);
+        }
+        else {
+            this.voterService.addVoter(session, this.authService.currentUser.userName);
+        }
+    }
+
+    userHasVoted(session: ISession) {
+        return this.voterService.userHasVoted(session, this.authService.currentUser.userName);
+    }
 }

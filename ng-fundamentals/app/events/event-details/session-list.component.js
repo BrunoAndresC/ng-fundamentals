@@ -10,9 +10,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
+var auth_service_1 = require("../../user/auth.service");
+var voter_service_1 = require("./voter.service");
 var SessionListComponent = /** @class */ (function () {
-    function SessionListComponent() {
+    function SessionListComponent(authService, voterService) {
+        this.authService = authService;
+        this.voterService = voterService;
     }
+    SessionListComponent.prototype.toggleVote = function (session) {
+        if (this.userHasVoted(session)) {
+            this.voterService.deleteVoter(session, this.authService.currentUser.userName);
+        }
+        else {
+            this.voterService.addVoter(session, this.authService.currentUser.userName);
+        }
+    };
+    SessionListComponent.prototype.userHasVoted = function (session) {
+        return this.voterService.userHasVoted(session, this.authService.currentUser.userName);
+    };
     __decorate([
         core_1.Input(),
         __metadata("design:type", Array)
@@ -22,7 +37,9 @@ var SessionListComponent = /** @class */ (function () {
             selector: 'session-list',
             templateUrl: 'app/events/event-details/session-list.component.html',
             styles: ['collapsible-well h6 {margin-top:-5px; margin-bottom:10px }']
-        })
+        }),
+        __metadata("design:paramtypes", [auth_service_1.AuthService,
+            voter_service_1.VoterService])
     ], SessionListComponent);
     return SessionListComponent;
 }());

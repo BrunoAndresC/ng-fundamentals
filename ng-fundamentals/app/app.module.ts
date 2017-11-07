@@ -12,6 +12,7 @@ import { EventCreateComponent } from './events/event-create.component';
 import { Error404Component } from './errors/404.component';
 import { SessionCreateComponent } from './events/event-details/session-create.component';
 import { SessionListComponent } from './events/event-details/session-list.component';
+import { UpvoteComponent } from './events/event-details/upvote.component';
 
 import { EventRouteActivator } from './events/event-details/event-route-activator.service';
 import { EventService } from './events/shared/event.service';
@@ -21,6 +22,7 @@ import { EventService } from './events/shared/event.service';
 import { JQ_TOKEN, TOASTR_TOKEN, Toastr, CollapsibleWellComponent, SimpleModalComponent, ModalTriggerDirective } from './common/index';
 import { AuthService } from './user/auth.service';
 //import { CollapsibleWellComponent } from './common/collapsible-well.component';
+import { VoterService } from './events/event-details/voter.service';
 
 import { appRoutes } from './routes';
 
@@ -47,7 +49,8 @@ declare let jQuery: Object;
         SessionListComponent,
         CollapsibleWellComponent,
         SimpleModalComponent,
-        ModalTriggerDirective
+        ModalTriggerDirective,
+        UpvoteComponent
     ],
     providers: [
         EventService,
@@ -69,7 +72,8 @@ declare let jQuery: Object;
             provide: 'canDeactivateEventCreate',
             useValue: checkDirtyState
         },
-        AuthService
+        AuthService,
+        VoterService
     ],
     bootstrap: [EventsAppComponent]
 })

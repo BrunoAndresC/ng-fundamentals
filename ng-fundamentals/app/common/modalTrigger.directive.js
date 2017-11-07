@@ -22,9 +22,14 @@ var ModalTriggerDirective = /** @class */ (function () {
     ModalTriggerDirective.prototype.ngOnInit = function () {
         var _this = this;
         this.element.addEventListener('click', function (e) {
-            _this.$('#simple-modal').modal({});
+            _this.$("#" + _this.modalId).modal({});
+            //this.$('#simple-modal').modal({});
         });
     };
+    __decorate([
+        core_1.Input('modal-trigger'),
+        __metadata("design:type", String)
+    ], ModalTriggerDirective.prototype, "modalId", void 0);
     ModalTriggerDirective = __decorate([
         core_1.Directive({
             selector: '[modal-trigger]'

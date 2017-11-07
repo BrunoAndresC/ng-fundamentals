@@ -1,4 +1,4 @@
-﻿import { Component, OnInit } from '@angular/core';
+﻿import { Component, OnInit, Params } from '@angular/core';
 import { EventService } from '../shared/event.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { IEvent, ISession } from '../shared/index';
@@ -27,11 +27,17 @@ export class EventDetailsComponent implements OnInit {
 
     }
 
-    ngOnInit(){
-        //this.event = this.eventService.getEvent(1);
+    ngOnInit() {
+        this.route.params.forEach((params: Params) => {
+            this.event = this.eventService.getEvent(+params['id']);
+            // Reset the state of the differents properties.
+            this.addMode = false;
+        });
 
-        let id = +this.route.snapshot.params['id'];
-        this.event = this.eventService.getEvent(id);
+        //let id = +this.route.snapshot.params['id'];
+        //this.event = this.eventService.getEvent(id);
+
+        //this.event = this.eventService.getEvent(1);
     }
 
     updateEvent(formValues) {

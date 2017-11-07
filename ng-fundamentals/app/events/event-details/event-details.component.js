@@ -21,9 +21,15 @@ var EventDetailsComponent = /** @class */ (function () {
         this.isDirty = true;
     }
     EventDetailsComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.route.params.forEach(function (params) {
+            _this.event = _this.eventService.getEvent(+params['id']);
+            // Reset the state of the differents properties.
+            _this.addMode = false;
+        });
+        //let id = +this.route.snapshot.params['id'];
+        //this.event = this.eventService.getEvent(id);
         //this.event = this.eventService.getEvent(1);
-        var id = +this.route.snapshot.params['id'];
-        this.event = this.eventService.getEvent(id);
     };
     EventDetailsComponent.prototype.updateEvent = function (formValues) {
         console.log(formValues);

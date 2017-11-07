@@ -15,11 +15,16 @@ import { SessionListComponent } from './events/event-details/session-list.compon
 
 import { EventRouteActivator } from './events/event-details/event-route-activator.service';
 import { EventService } from './events/shared/event.service';
-import { ToastrService } from './common/toastr.service';
+//import { ToastrService } from './common/toastr.service';
+//import { TOASTR_TOKEN } from './common/toastr.service';
+import { TOASTR_TOKEN, Toastr } from './common/toastr.service';
 import { AuthService } from './user/auth.service';
 import { CollapsibleWellComponent } from './common/collapsible-well.component';
 
 import { appRoutes } from './routes';
+
+declare let toastr: Toastr;
+//declare let toastr: any;
 
 @NgModule({
     imports: [
@@ -42,8 +47,16 @@ import { appRoutes } from './routes';
     ],
     providers: [
         EventService,
-        ToastrService,
-        EventRouteActivator,
+        {
+            provide: TOASTR_TOKEN,
+            useValue: toastr
+        },
+        //ToastrService,
+        EventRouteActivator, // Shorthand
+        //{
+        //    provide: EventRouteActivator,
+        //    useClass: EventRouteActivator
+        //},
         {
             provide: 'canDeactivateEventCreate',
             useValue: checkDirtyState

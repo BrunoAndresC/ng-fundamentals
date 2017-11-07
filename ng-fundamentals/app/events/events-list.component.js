@@ -11,25 +11,33 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var event_service_1 = require("./shared/event.service");
-var toastr_service_1 = require("../common/toastr.service");
 var EventsListComponent = /** @class */ (function () {
     //events: any[];
-    function EventsListComponent(eventService, toastrService) {
+    function EventsListComponent(eventService) {
         this.eventService = eventService;
-        this.toastrService = toastrService;
-        //this.events = this.eventService.getEvents(); 
     }
+    //constructor(private eventService: EventService, private toastrService: ToastrService) {
+    //    //this.events = this.eventService.getEvents(); 
+    //}
     EventsListComponent.prototype.ngOnInit = function () {
         this.events = this.eventService.getEvents();
-    };
-    EventsListComponent.prototype.handleThumbnailClick = function (eventName) {
-        //toastr.success(eventName);
-        this.toastrService.success(eventName);
     };
     EventsListComponent = __decorate([
         core_1.Component({
             //    selector: 'events-list',
-            template: "\n    <div>\n        <h1>Angular events</h1>\n        <hr/>\n        <div class=\"row\">\n            <div *ngFor=\"let event of events\" class=\"col-md-5\">\n                <event-thumbnail (click)=\"handleThumbnailClick(event.name)\" [event]=\"event\">\n                </event-thumbnail>\n            </div>\n        </div>\n    </div>\n"
+            template: "\n    <div>\n        <h1>Angular events</h1>\n        <hr/>\n        <div class=\"row\">\n            <div *ngFor=\"let event of events\" class=\"col-md-5\">\n                <event-thumbnail [event]=\"event\">\n                </event-thumbnail>\n            </div>\n        </div>\n    </div>\n"
+            //    template: `
+            //    <div>
+            //        <h1>Angular events</h1>
+            //        <hr/>
+            //        <div class="row">
+            //            <div *ngFor="let event of events" class="col-md-5">
+            //                <event-thumbnail (click)="handleThumbnailClick(event.name)" [event]="event">
+            //                </event-thumbnail>
+            //            </div>
+            //        </div>
+            //    </div>
+            //`
             //    template: `
             //    <div>
             //        <h1>Angular events</h1>
@@ -92,7 +100,7 @@ var EventsListComponent = /** @class */ (function () {
             //    </div>
             //` 
         }),
-        __metadata("design:paramtypes", [event_service_1.EventService, toastr_service_1.ToastrService])
+        __metadata("design:paramtypes", [event_service_1.EventService])
     ], EventsListComponent);
     return EventsListComponent;
 }());

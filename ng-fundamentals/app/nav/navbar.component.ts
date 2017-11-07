@@ -15,6 +15,11 @@ export class NavBarComponent {
 
     }
 
+    // We use directive instead.
+    //onSearch() {
+    //    $('#id').model();
+    //}
+
     searchSessions(searchTerm) {
         this.eventService.searchSessions(searchTerm).subscribe(
             sessions => {

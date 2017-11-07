@@ -50,7 +50,8 @@ var AppModule = /** @class */ (function () {
                 session_create_component_1.SessionCreateComponent,
                 session_list_component_1.SessionListComponent,
                 index_1.CollapsibleWellComponent,
-                index_1.SimpleModalComponent
+                index_1.SimpleModalComponent,
+                index_1.ModalTriggerDirective
             ],
             providers: [
                 event_service_1.EventService,

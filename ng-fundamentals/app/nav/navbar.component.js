@@ -18,6 +18,10 @@ var NavBarComponent = /** @class */ (function () {
         this.eventService = eventService;
         this.searchTerm = "";
     }
+    // We use directive instead.
+    //onSearch() {
+    //    $('#id').model();
+    //}
     NavBarComponent.prototype.searchSessions = function (searchTerm) {
         var _this = this;
         this.eventService.searchSessions(searchTerm).subscribe(function (sessions) {

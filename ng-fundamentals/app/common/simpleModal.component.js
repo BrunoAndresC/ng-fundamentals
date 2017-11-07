@@ -20,7 +20,7 @@ var SimpleModalComponent = /** @class */ (function () {
     SimpleModalComponent = __decorate([
         core_1.Component({
             selector: 'simple-modal',
-            template: "\n    <div id=\"simple-modal\" class=\"modal fade\" tabindex=\"-1\">\n        <div class=\"modal-dialog\">\n            <div class=\"modal-content\">\n                <div class=\"modal-header\">\n                    <button type=\"button\" class=\"close\" data-dismiss=\"modal\">\n                        <span>&times;<span>\n                    </button>\n                    <h4 class=\"modal-title\">{{title}}</h4>\n                </div>\n                <div class=\"modal.body\">\n                    <ng-content></ng-content>\n                </div>\n            </div>\n        </div>\n    </div>\n    ",
+            template: "\n    <div id=\"simple-modal\" class=\"modal fade\" tabindex=\"-1\">\n        <div class=\"modal-dialog\">\n            <div class=\"modal-content\">\n                <div class=\"modal-header\">\n                    <button type=\"button\" class=\"close\" data-dismiss=\"modal\">\n                        <span>&times;</span>\n                    </button>\n                    <h4 class=\"modal-title\">{{title}}</h4>\n                </div>\n                <div class=\"modal.body\">\n                    <ng-content></ng-content>\n                </div>\n            </div>\n        </div>\n    </div>\n    ",
             styles: ["\n        .modal-body { height: 250px; overflow-y: scroll; }\n    "]
         })
     ], SimpleModalComponent);

@@ -15,12 +15,17 @@ var EventsListComponent = /** @class */ (function () {
     //events: any[];
     function EventsListComponent(eventService) {
         this.eventService = eventService;
+        this.onReadyEvents = this.onReadyEvents.bind(this);
     }
     //constructor(private eventService: EventService, private toastrService: ToastrService) {
     //    //this.events = this.eventService.getEvents(); 
     //}
     EventsListComponent.prototype.ngOnInit = function () {
-        this.events = this.eventService.getEvents();
+        this.eventService.getEvents().subscribe(this.onReadyEvents);
+        //this.events = this.eventService.getEvents(); 
+    };
+    EventsListComponent.prototype.onReadyEvents = function (events) {
+        this.events = events;
     };
     EventsListComponent = __decorate([
         core_1.Component({

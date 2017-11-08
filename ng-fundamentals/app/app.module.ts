@@ -2,6 +2,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
 import { EventsAppComponent } from './events-app.component';
 import { EventsListComponent } from './events/events-list.component';
@@ -35,6 +36,7 @@ declare let jQuery: Object;
     imports: [
         BrowserModule,
         FormsModule,
+        HttpModule,
         ReactiveFormsModule,
         RouterModule.forRoot(appRoutes)
     ],

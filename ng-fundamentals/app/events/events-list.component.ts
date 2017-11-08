@@ -95,7 +95,8 @@ export class EventsListComponent implements OnInit {
     events: IEvent[];
     //events: any[];
 
-    constructor(private eventService: EventService) {        
+    constructor(private eventService: EventService) {
+        this.onReadyEvents = this.onReadyEvents.bind(this);
     }
 
     //constructor(private eventService: EventService, private toastrService: ToastrService) {
@@ -103,7 +104,12 @@ export class EventsListComponent implements OnInit {
     //}
 
     ngOnInit() {
-        this.events = this.eventService.getEvents(); 
+        this.eventService.getEvents().subscribe(this.onReadyEvents); 
+        //this.events = this.eventService.getEvents(); 
+    }
+
+    onReadyEvents(events: IEvent[]): void {
+        this.events = events;
     }
 
     //handleThumbnailClick(eventName) {

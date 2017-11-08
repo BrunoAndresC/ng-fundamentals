@@ -10,6 +10,7 @@ var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var router_1 = require("@angular/router");
 var forms_1 = require("@angular/forms");
+var http_1 = require("@angular/http");
 var events_app_component_1 = require("./events-app.component");
 var events_list_component_1 = require("./events/events-list.component");
 var event_thumbnail_component_1 = require("./events/event-thumbnail.component");
@@ -39,6 +40,7 @@ var AppModule = /** @class */ (function () {
             imports: [
                 platform_browser_1.BrowserModule,
                 forms_1.FormsModule,
+                http_1.HttpModule,
                 forms_1.ReactiveFormsModule,
                 router_1.RouterModule.forRoot(routes_1.appRoutes)
             ],

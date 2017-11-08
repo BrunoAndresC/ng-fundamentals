@@ -29,6 +29,7 @@ var index_1 = require("./common/index");
 var auth_service_1 = require("./user/auth.service");
 //import { CollapsibleWellComponent } from './common/collapsible-well.component';
 var voter_service_1 = require("./events/event-details/voter.service");
+var location_validator_directive_1 = require("./events/location-validator.directive");
 var routes_1 = require("./routes");
 var AppModule = /** @class */ (function () {
     function AppModule() {
@@ -54,7 +55,8 @@ var AppModule = /** @class */ (function () {
                 index_1.CollapsibleWellComponent,
                 index_1.SimpleModalComponent,
                 index_1.ModalTriggerDirective,
-                upvote_component_1.UpvoteComponent
+                upvote_component_1.UpvoteComponent,
+                location_validator_directive_1.LocationValidatorDirective
             ],
             providers: [
                 event_service_1.EventService,

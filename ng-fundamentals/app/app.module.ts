@@ -23,6 +23,7 @@ import { JQ_TOKEN, TOASTR_TOKEN, Toastr, CollapsibleWellComponent, SimpleModalCo
 import { AuthService } from './user/auth.service';
 //import { CollapsibleWellComponent } from './common/collapsible-well.component';
 import { VoterService } from './events/event-details/voter.service';
+import { LocationValidatorDirective } from './events/location-validator.directive';
 
 import { appRoutes } from './routes';
 
@@ -50,7 +51,8 @@ declare let jQuery: Object;
         CollapsibleWellComponent,
         SimpleModalComponent,
         ModalTriggerDirective,
-        UpvoteComponent
+        UpvoteComponent,
+        LocationValidatorDirective
     ],
     providers: [
         EventService,

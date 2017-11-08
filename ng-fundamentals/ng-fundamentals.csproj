@@ -123,6 +123,7 @@
     <TypeScriptCompile Include="app\events\event-details\voter.service.ts" />
     <TypeScriptCompile Include="app\events\event-thumbnail.component.ts" />
     <TypeScriptCompile Include="app\events\events-list.component.ts" />
+    <TypeScriptCompile Include="app\events\location-validator.directive.ts" />
     <TypeScriptCompile Include="app\events\shared\event.model.ts" />
     <TypeScriptCompile Include="app\events\shared\event.service.ts" />
     <TypeScriptCompile Include="app\events\shared\index.ts" />

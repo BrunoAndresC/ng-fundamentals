@@ -1,6 +1,6 @@
-﻿import { Component, OnInit, Params } from '@angular/core';
+﻿import { Component, OnInit} from '@angular/core';
 import { EventService } from '../shared/event.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, Params } from '@angular/router';
 import { IEvent, ISession } from '../shared/index';
 
 @Component({

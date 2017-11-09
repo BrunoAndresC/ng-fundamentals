@@ -67,3 +67,5 @@ function find(needle, haystack) {
 }
 
 usage	--->	console.log(find(10,scores)); // [0, 3]
+
+https://i.imgflip.com/yhzjy.jpg

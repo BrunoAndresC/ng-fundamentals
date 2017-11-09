@@ -22,10 +22,12 @@ var EventCreateComponent = /** @class */ (function () {
         this.router.navigate(['/events']);
     };
     EventCreateComponent.prototype.saveEvent = function (formValues) {
+        var _this = this;
         console.log(formValues);
-        this.eventService.saveEvent(formValues);
-        this.isDirty = false;
-        this.router.navigate(['/events']);
+        this.eventService.saveEvent(formValues).subscribe(function (event) {
+            _this.isDirty = false;
+            _this.router.navigate(['/events']);
+        });
     };
     EventCreateComponent = __decorate([
         core_1.Component({

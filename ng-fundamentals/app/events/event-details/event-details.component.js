@@ -22,11 +22,26 @@ var EventDetailsComponent = /** @class */ (function () {
     }
     EventDetailsComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.route.params.forEach(function (params) {
-            _this.event = _this.eventService.getEvent(+params['id']);
-            // Reset the state of the differents properties.
+        this.route.data.forEach(function (data) {
+            _this.event = data['event'];
             _this.addMode = false;
         });
+        // THIS CODE HAS AN ISSUE WITH THE NAVIGATION AND IT IS FIXED ABOVE.
+        //this.route.params.forEach((params: Params) => {
+        //    this.event = this.route.snapshot.data['event']                
+        //    this.addMode = false;            
+        //})
+        //this.route.params.forEach((params: Params) => {
+        //    this.eventService.getEvent(+params['id']).subscribe((event: IEvent) => {
+        //        this.event = event;
+        //        this.addMode = false;
+        //    })
+        //})
+        //this.route.params.forEach((params: Params) => {
+        //    this.event = this.eventService.getEvent(+params['id']);
+        //    // Reset the state of the differents properties.
+        //    this.addMode = false;
+        //});
         //let id = +this.route.snapshot.params['id'];
         //this.event = this.eventService.getEvent(id);
         //this.event = this.eventService.getEvent(1);

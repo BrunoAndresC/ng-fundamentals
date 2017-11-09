@@ -25,6 +25,7 @@ import { AuthService } from './user/auth.service';
 //import { CollapsibleWellComponent } from './common/collapsible-well.component';
 import { VoterService } from './events/event-details/voter.service';
 import { LocationValidatorDirective } from './events/location-validator.directive';
+import { EventResolver } from './events/event-resolver.service';
 
 import { appRoutes } from './routes';
 
@@ -77,7 +78,8 @@ declare let jQuery: Object;
             useValue: checkDirtyState
         },
         AuthService,
-        VoterService
+        VoterService,
+        EventResolver
     ],
     bootstrap: [EventsAppComponent]
 })

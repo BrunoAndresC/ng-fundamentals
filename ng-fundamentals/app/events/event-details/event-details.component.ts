@@ -28,11 +28,29 @@ export class EventDetailsComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.route.params.forEach((params: Params) => {
-            this.event = this.eventService.getEvent(+params['id']);
-            // Reset the state of the differents properties.
+        this.route.data.forEach((data) => {
+            this.event = data['event'];
             this.addMode = false;
-        });
+        })
+
+        // THIS CODE HAS AN ISSUE WITH THE NAVIGATION AND IT IS FIXED ABOVE.
+        //this.route.params.forEach((params: Params) => {
+        //    this.event = this.route.snapshot.data['event']                
+        //    this.addMode = false;            
+        //})
+
+        //this.route.params.forEach((params: Params) => {
+        //    this.eventService.getEvent(+params['id']).subscribe((event: IEvent) => {
+        //        this.event = event;
+        //        this.addMode = false;
+        //    })
+        //})
+
+        //this.route.params.forEach((params: Params) => {
+        //    this.event = this.eventService.getEvent(+params['id']);
+        //    // Reset the state of the differents properties.
+        //    this.addMode = false;
+        //});
 
         //let id = +this.route.snapshot.params['id'];
         //this.event = this.eventService.getEvent(id);

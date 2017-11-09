@@ -19,6 +19,7 @@ var EventService = /** @class */ (function () {
     EventService.prototype.getEvents = function () {
         return this.http.get("/api/events")
             .map(function (response) {
+            //console.log(response.json());
             return response.json();
         })
             .catch(this.handleError);
@@ -30,8 +31,15 @@ var EventService = /** @class */ (function () {
     //    return EVENTS;
     //}
     EventService.prototype.getEvent = function (id) {
-        return EVENTS.find(function (event) { return event.id === id; });
+        return this.http.get("/api/events/" + id)
+            .map(function (response) {
+            return response.json();
+        })
+            .catch(this.handleError);
     };
+    //getEvent(id: number): IEvent {
+    //    return EVENTS.find(event => event.id === id);
+    //}
     //getEvent(id: number) {
     //    return EVENTS.find(event => event.id === id);
     //}
@@ -62,10 +70,17 @@ var EventService = /** @class */ (function () {
     //}
     EventService.prototype.saveEvent = function (event) {
         //Insert
-        event.id = 999;
-        event.session = [];
-        EVENTS.push(event);
+        var headers = new http_1.Headers({ 'Content-Type': 'application/json' });
+        var options = new http_1.RequestOptions({ headers: headers });
+        return this.http.post('/api/events', JSON.stringify(event), options)
+            .catch(this.handleError);
     };
+    //saveEvent(event) {        
+    //    //Insert
+    //    event.id = 999;
+    //    event.session = [];
+    //    EVENTS.push(event);        
+    //}
     EventService.prototype.updateEvent = function (event) {
         //Find index of specific object using findIndex method.    
         var objIndex = EVENTS.findIndex((function (obj) { return obj.id == event.eventId; }));

@@ -1,6 +1,6 @@
 ﻿import { Injectable, EventEmitter } from '@angular/core';
 import { IEvent, ISession } from './event.model';
-import { Http, Response } from '@angular/http';
+import { Http, Response, Headers, RequestOptions, ResponseContentType } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
 
 @Injectable()
@@ -12,6 +12,7 @@ export class EventService {
     getEvents(): Observable<IEvent[]> {
         return this.http.get("/api/events")
             .map((response: Response) => {
+                //console.log(response.json());
                 return <IEvent[]>response.json();
             })
             .catch(this.handleError);
@@ -25,9 +26,17 @@ export class EventService {
     //    return EVENTS;
     //}
 
-    getEvent(id: number): IEvent {
-        return EVENTS.find(event => event.id === id);
+    getEvent(id: number): Observable<IEvent> {
+        return this.http.get("/api/events/" + id)
+            .map((response: Response) => {                
+                return <IEvent>response.json();
+            })
+            .catch(this.handleError);
     }
+
+    //getEvent(id: number): IEvent {
+    //    return EVENTS.find(event => event.id === id);
+    //}
 
     //getEvent(id: number) {
     //    return EVENTS.find(event => event.id === id);
@@ -62,12 +71,23 @@ export class EventService {
     //    }
     //}
 
-    saveEvent(event) {        
+    saveEvent(event): Observable<IEvent> {
         //Insert
-        event.id = 999;
-        event.session = [];
-        EVENTS.push(event);
+        let headers = new Headers({ 'Content-Type': 'application/json' });
+        let options = new RequestOptions({ headers: headers });
+
+        return this.http.post('/api/events',
+                        JSON.stringify(event),
+                        options)
+                        .catch(this.handleError);
     }
+
+    //saveEvent(event) {        
+    //    //Insert
+    //    event.id = 999;
+    //    event.session = [];
+    //    EVENTS.push(event);        
+    //}
 
     updateEvent(event) {
         //Find index of specific object using findIndex method.    

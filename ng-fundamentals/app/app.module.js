@@ -31,6 +31,7 @@ var auth_service_1 = require("./user/auth.service");
 //import { CollapsibleWellComponent } from './common/collapsible-well.component';
 var voter_service_1 = require("./events/event-details/voter.service");
 var location_validator_directive_1 = require("./events/location-validator.directive");
+var event_resolver_service_1 = require("./events/event-resolver.service");
 var routes_1 = require("./routes");
 var AppModule = /** @class */ (function () {
     function AppModule() {
@@ -81,7 +82,8 @@ var AppModule = /** @class */ (function () {
                     useValue: checkDirtyState
                 },
                 auth_service_1.AuthService,
-                voter_service_1.VoterService
+                voter_service_1.VoterService,
+                event_resolver_service_1.EventResolver
             ],
             bootstrap: [events_app_component_1.EventsAppComponent]
         })

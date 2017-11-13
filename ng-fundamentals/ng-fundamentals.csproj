@@ -122,6 +122,7 @@
     <TypeScriptCompile Include="app\events\event-details\session-create.component.ts" />
     <TypeScriptCompile Include="app\events\event-details\session-list.component.ts" />
     <TypeScriptCompile Include="app\events\event-details\upvote.component.ts" />
+    <TypeScriptCompile Include="app\events\event-details\voter.service.spec.ts" />
     <TypeScriptCompile Include="app\events\event-details\voter.service.ts" />
     <TypeScriptCompile Include="app\events\event-resolver.service.ts" />
     <TypeScriptCompile Include="app\events\event-thumbnail.component.ts" />

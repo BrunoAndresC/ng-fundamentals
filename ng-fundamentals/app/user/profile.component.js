@@ -54,7 +54,7 @@ var ProfileComponent = /** @class */ (function () {
         var _this = this;
         this.authService.logout()
             .subscribe(function () {
-            _this.router.navigate(['/suer/login']);
+            _this.router.navigate(['/user/login']);
         });
     };
     //saveProfile(formValues) {

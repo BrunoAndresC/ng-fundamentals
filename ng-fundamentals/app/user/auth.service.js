@@ -41,10 +41,6 @@ var AuthService = /** @class */ (function () {
     AuthService.prototype.isAuthenticated = function () {
         return !!this.currentUser;
     };
-    AuthService.prototype.updateCurrentUser = function (firstName, lastName) {
-        this.currentUser.firstName = firstName;
-        this.currentUser.lastName = lastName;
-    };
     AuthService.prototype.checkAuthenticationStatus = function () {
         var _this = this;
         return this.http.get('/api/currentIdentity')
@@ -61,6 +57,13 @@ var AuthService = /** @class */ (function () {
                 _this.currentUser = currentUser;
             }
         });
+    };
+    AuthService.prototype.updateCurrentUser = function (firstName, lastName) {
+        this.currentUser.firstName = firstName;
+        this.currentUser.lastName = lastName;
+        var headers = new http_1.Headers({ 'Content-Type': 'application/json' });
+        var options = new http_1.RequestOptions({ headers: headers });
+        return this.http.put("/api/users/" + this.currentUser.id, JSON.stringify(this.currentUser), options);
     };
     AuthService = __decorate([
         core_1.Injectable(),

@@ -105,22 +105,29 @@ var EventService = /** @class */ (function () {
     //    return results;
     //}
     EventService.prototype.searchSessions = function (searchTerm) {
-        var term = searchTerm.toLocaleLowerCase();
-        var results = [];
-        EVENTS.forEach(function (event) {
-            var matchingSessions = event.sessions.filter(function (session) { return session.name.toLocaleLowerCase().indexOf(term) > -1; });
-            matchingSessions = matchingSessions.map(function (session) {
-                session.eventId = event.id;
-                return session;
-            });
-            results = results.concat(matchingSessions);
-        });
-        var emitter = new core_1.EventEmitter(true);
-        setTimeout(function () {
-            emitter.emit(results);
-        }, 100);
-        return emitter;
+        return this.http.get("/api/sessions/search?search=" + searchTerm)
+            .map(function (response) {
+            return response.json();
+        })
+            .catch(this.handleError);
     };
+    //searchSessions(searchTerm) {
+    //    let term = searchTerm.toLocaleLowerCase();
+    //    var results: ISession[] = [];
+    //    EVENTS.forEach(event => {
+    //        let matchingSessions = event.sessions.filter(session => session.name.toLocaleLowerCase().indexOf(term) > -1);
+    //        matchingSessions = matchingSessions.map((session: any) => {
+    //            session.eventId = event.id;
+    //            return session;
+    //        })
+    //        results = results.concat(matchingSessions);
+    //    })
+    //    var emitter = new EventEmitter(true);
+    //    setTimeout(() => {
+    //        emitter.emit(results);
+    //    }, 100);
+    //    return emitter;
+    //}
     EventService.prototype.handleError = function (error) {
         return Rx_1.Observable.throw(error.statusText);
     };

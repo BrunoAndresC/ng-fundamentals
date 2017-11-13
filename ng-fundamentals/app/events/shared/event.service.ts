@@ -118,26 +118,34 @@ export class EventService {
     //}
 
     searchSessions(searchTerm) {
-        let term = searchTerm.toLocaleLowerCase();
-        var results: ISession[] = [];
-
-        EVENTS.forEach(event => {
-            let matchingSessions = event.sessions.filter(session => session.name.toLocaleLowerCase().indexOf(term) > -1);
-            matchingSessions = matchingSessions.map((session: any) => {
-                session.eventId = event.id;
-                return session;
+        return this.http.get("/api/sessions/search?search=" + searchTerm)
+            .map((response: Response) => {
+                return response.json();
             })
-
-            results = results.concat(matchingSessions);
-        })
-
-        var emitter = new EventEmitter(true);
-        setTimeout(() => {
-            emitter.emit(results);
-        }, 100);
-
-        return emitter;
+            .catch(this.handleError);
     }
+
+    //searchSessions(searchTerm) {
+    //    let term = searchTerm.toLocaleLowerCase();
+    //    var results: ISession[] = [];
+
+    //    EVENTS.forEach(event => {
+    //        let matchingSessions = event.sessions.filter(session => session.name.toLocaleLowerCase().indexOf(term) > -1);
+    //        matchingSessions = matchingSessions.map((session: any) => {
+    //            session.eventId = event.id;
+    //            return session;
+    //        })
+
+    //        results = results.concat(matchingSessions);
+    //    })
+
+    //    var emitter = new EventEmitter(true);
+    //    setTimeout(() => {
+    //        emitter.emit(results);
+    //    }, 100);
+
+    //    return emitter;
+    //}
 
     private handleError(error: Response) {
         return Observable.throw(error.statusText);

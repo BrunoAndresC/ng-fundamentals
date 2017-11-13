@@ -45,6 +45,23 @@ var AuthService = /** @class */ (function () {
         this.currentUser.firstName = firstName;
         this.currentUser.lastName = lastName;
     };
+    AuthService.prototype.checkAuthenticationStatus = function () {
+        var _this = this;
+        return this.http.get('/api/currentIdentity')
+            .map(function (response) {
+            if (response._body) {
+                return response.json();
+            }
+            else {
+                return {};
+            }
+        })
+            .do(function (currentUser) {
+            if (!!currentUser.userName) {
+                _this.currentUser = currentUser;
+            }
+        });
+    };
     AuthService = __decorate([
         core_1.Injectable(),
         __metadata("design:paramtypes", [http_1.Http])

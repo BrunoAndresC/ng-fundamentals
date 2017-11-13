@@ -50,6 +50,13 @@ var ProfileComponent = /** @class */ (function () {
             });
         }
     };
+    ProfileComponent.prototype.logout = function () {
+        var _this = this;
+        this.authService.logout()
+            .subscribe(function () {
+            _this.router.navigate(['/suer/login']);
+        });
+    };
     //saveProfile(formValues) {
     //    if (this.profileForm.valid) {
     //        this.authService.updateCurrentUser(formValues.firstName, formValues.lastName);

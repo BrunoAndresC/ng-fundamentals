@@ -30,6 +30,12 @@ var AuthService = /** @class */ (function () {
             return Rx_1.Observable.of(false);
         });
     };
+    AuthService.prototype.logout = function () {
+        this.currentUser = undefined;
+        var headers = new http_1.Headers({ 'Content-Type': 'application/json' });
+        var options = new http_1.RequestOptions({ headers: headers });
+        return this.http.post('/api/logout', JSON.stringify({}), options);
+    };
     //loginUser(userName: string, password: string) {
     //    this.currentUser = {
     //        id: 1,

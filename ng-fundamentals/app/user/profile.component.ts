@@ -65,6 +65,12 @@ export class ProfileComponent implements OnInit {
         }
     }
 
+    logout() {
+        this.authService.logout()
+            .subscribe(() => {
+                this.router.navigate(['/suer/login']);
+        })
+    }
 
     //saveProfile(formValues) {
     //    if (this.profileForm.valid) {

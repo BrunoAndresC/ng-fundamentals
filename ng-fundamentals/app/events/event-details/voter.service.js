@@ -29,7 +29,7 @@ var VoterService = /** @class */ (function () {
         var headers = new http_1.Headers({ 'Content-Type': 'application/json' });
         var options = new http_1.RequestOptions({ headers: headers });
         var url = "/api/events/" + eventId + "/sessions/" + session.id + "/voters/" + voterName;
-        return this.http.post(url, JSON.stringify({}), Option).catch(this.handleError);
+        return this.http.post(url, JSON.stringify({}), options).catch(this.handleError);
     };
     //addVoter(session: ISession, voterName: string) {
     //    session.voters.push(voterName);

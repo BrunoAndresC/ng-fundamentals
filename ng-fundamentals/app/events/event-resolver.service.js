@@ -8,21 +8,20 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var event_service_1 = require("./shared/event.service");
-var EventResolver = /** @class */ (function () {
+var EventResolver = (function () {
     function EventResolver(eventService) {
         this.eventService = eventService;
     }
     EventResolver.prototype.resolve = function (route) {
         return this.eventService.getEvent(route.params['id']);
     };
-    EventResolver = __decorate([
-        core_1.Injectable(),
-        __metadata("design:paramtypes", [event_service_1.EventService])
-    ], EventResolver);
     return EventResolver;
 }());
+EventResolver = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [event_service_1.EventService])
+], EventResolver);
 exports.EventResolver = EventResolver;
 //# sourceMappingURL=event-resolver.service.js.map

@@ -11,10 +11,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
-Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var jQuery_service_1 = require("./jQuery.service");
-var SimpleModalComponent = /** @class */ (function () {
+var SimpleModalComponent = (function () {
     function SimpleModalComponent($) {
         this.$ = $;
     }
@@ -23,66 +22,66 @@ var SimpleModalComponent = /** @class */ (function () {
             this.$(this.containerElement.nativeElement).modal('hide');
         }
     };
-    __decorate([
-        core_1.Input(),
-        __metadata("design:type", String)
-    ], SimpleModalComponent.prototype, "title", void 0);
-    __decorate([
-        core_1.Input(),
-        __metadata("design:type", String)
-    ], SimpleModalComponent.prototype, "elementId", void 0);
-    __decorate([
-        core_1.Input(),
-        __metadata("design:type", String)
-    ], SimpleModalComponent.prototype, "closeOnBodyClick", void 0);
-    __decorate([
-        core_1.ViewChild('modalcontainer'),
-        __metadata("design:type", core_1.ElementRef)
-    ], SimpleModalComponent.prototype, "containerElement", void 0);
-    SimpleModalComponent = __decorate([
-        core_1.Component({
-            selector: 'simple-modal',
-            template: "\n    <div id=\"{{elementId}}\" #modalcontainer class=\"modal fade\" tabindex=\"-1\">\n        <div class=\"modal-dialog\">\n            <div class=\"modal-content\">\n                <div class=\"modal-header\">\n                    <button type=\"button\" class=\"close\" data-dismiss=\"modal\">\n                        <span>&times;</span>\n                    </button>\n                    <h4 class=\"modal-title\">{{title}}</h4>\n                </div>\n                <div class=\"modal-body\" (click)=\"closeModal()\">\n                    <ng-content></ng-content>\n                </div>\n            </div>\n        </div>\n    </div>\n    ",
-            //template: `
-            //<div id="{{elementId}}" class="modal fade" tabindex="-1">
-            //    <div class="modal-dialog">
-            //        <div class="modal-content">
-            //            <div class="modal-header">
-            //                <button type="button" class="close" data-dismiss="modal">
-            //                    <span>&times;</span>
-            //                </button>
-            //                <h4 class="modal-title">{{title}}</h4>
-            //            </div>
-            //            <div class="modal.body">
-            //                <ng-content></ng-content>
-            //            </div>
-            //        </div>
-            //    </div>
-            //</div>
-            //`,
-            //template: `
-            //<div id="simple-modal" class="modal fade" tabindex="-1">
-            //    <div class="modal-dialog">
-            //        <div class="modal-content">
-            //            <div class="modal-header">
-            //                <button type="button" class="close" data-dismiss="modal">
-            //                    <span>&times;</span>
-            //                </button>
-            //                <h4 class="modal-title">{{title}}</h4>
-            //            </div>
-            //            <div class="modal.body">
-            //                <ng-content></ng-content>
-            //            </div>
-            //        </div>
-            //    </div>
-            //</div>
-            //`,
-            styles: ["\n        .modal-body { height: 250px; overflow-y: scroll; }\n    "]
-        }),
-        __param(0, core_1.Inject(jQuery_service_1.JQ_TOKEN)),
-        __metadata("design:paramtypes", [Object])
-    ], SimpleModalComponent);
     return SimpleModalComponent;
 }());
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", String)
+], SimpleModalComponent.prototype, "title", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", String)
+], SimpleModalComponent.prototype, "elementId", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", String)
+], SimpleModalComponent.prototype, "closeOnBodyClick", void 0);
+__decorate([
+    core_1.ViewChild('modalcontainer'),
+    __metadata("design:type", core_1.ElementRef)
+], SimpleModalComponent.prototype, "containerElement", void 0);
+SimpleModalComponent = __decorate([
+    core_1.Component({
+        selector: 'simple-modal',
+        template: "\n    <div id=\"{{elementId}}\" #modalcontainer class=\"modal fade\" tabindex=\"-1\">\n        <div class=\"modal-dialog\">\n            <div class=\"modal-content\">\n                <div class=\"modal-header\">\n                    <button type=\"button\" class=\"close\" data-dismiss=\"modal\">\n                        <span>&times;</span>\n                    </button>\n                    <h4 class=\"modal-title\">{{title}}</h4>\n                </div>\n                <div class=\"modal-body\" (click)=\"closeModal()\">\n                    <ng-content></ng-content>\n                </div>\n            </div>\n        </div>\n    </div>\n    ",
+        //template: `
+        //<div id="{{elementId}}" class="modal fade" tabindex="-1">
+        //    <div class="modal-dialog">
+        //        <div class="modal-content">
+        //            <div class="modal-header">
+        //                <button type="button" class="close" data-dismiss="modal">
+        //                    <span>&times;</span>
+        //                </button>
+        //                <h4 class="modal-title">{{title}}</h4>
+        //            </div>
+        //            <div class="modal.body">
+        //                <ng-content></ng-content>
+        //            </div>
+        //        </div>
+        //    </div>
+        //</div>
+        //`,
+        //template: `
+        //<div id="simple-modal" class="modal fade" tabindex="-1">
+        //    <div class="modal-dialog">
+        //        <div class="modal-content">
+        //            <div class="modal-header">
+        //                <button type="button" class="close" data-dismiss="modal">
+        //                    <span>&times;</span>
+        //                </button>
+        //                <h4 class="modal-title">{{title}}</h4>
+        //            </div>
+        //            <div class="modal.body">
+        //                <ng-content></ng-content>
+        //            </div>
+        //        </div>
+        //    </div>
+        //</div>
+        //`,
+        styles: ["\n        .modal-body { height: 250px; overflow-y: scroll; }\n    "]
+    }),
+    __param(0, core_1.Inject(jQuery_service_1.JQ_TOKEN)),
+    __metadata("design:paramtypes", [Object])
+], SimpleModalComponent);
 exports.SimpleModalComponent = SimpleModalComponent;
 //# sourceMappingURL=simpleModal.component.js.map

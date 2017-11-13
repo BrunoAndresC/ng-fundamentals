@@ -8,37 +8,22 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var EventThumbnailComponent = /** @class */ (function () {
+var EventThumbnailComponent = (function () {
     function EventThumbnailComponent() {
     }
-    __decorate([
-        core_1.Input(),
-        __metadata("design:type", Object)
-    ], EventThumbnailComponent.prototype, "event", void 0);
-    EventThumbnailComponent = __decorate([
-        core_1.Component({
-            selector: 'event-thumbnail',
-            template: "    \n        <div [routerLink]=\"['/events', event.id]\" class=\"well hoverwell thumbnail\">\n            <h2>{{event?.name}}</h2>\n            <div>Date: {{event?.date}}</div>\n            <div>Time: {{event?.time}}</div>\n            <div [ngSwitch]=\"event?.time\">\n                <span *ngSwitchCase=\"'8:00 am'\">Early Start</span>\n                <span *ngSwitchCase=\"'10:00 am'\">Late Start</span>\n                <span *ngSwitchDefault>Normal Start</span>\n            </div>\n            <div>Price: ${{event?.price}}</div>\n            <div [hidden]=\"!event?.location\">\n                <span>Location: {{event?.location?.address}}</span>\n                <span>&nbsp;</span>\n                <span>{{event?.location?.city}}, {{event?.location?.country}}</span>\n            </div>\n            <div *ngIf=\"event?.onlineUrl\">\n                Online URL: {{event?.onlineUrl}}\n            </div>\n        </div>    \n        ",
-            styles: ["\n        .thumbnail { min-height: 250px; }\n    "]
-            //    template: `    
-            //        <div class="well hoverwell thumbnail">
-            //            <h2>{{event.name}}</h2>
-            //            <div>Date: {{event.date}}</div>
-            //            <div>Time: {{event.time}}</div>
-            //            <div>Price: \${{event.price}}</div>
-            //            <div>
-            //                <span>Location: {{event.location.address}}</span>
-            //                <span>&nbsp;</span>
-            //                <span>{{event.location.city}}, {{event.location.country}}</span>
-            //            </div>
-            //            <button class="btn btnprimary" (click)="handleClickMe()">Click</button>
-            //        </div>    
-            //`
-        })
-    ], EventThumbnailComponent);
     return EventThumbnailComponent;
 }());
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Object)
+], EventThumbnailComponent.prototype, "event", void 0);
+EventThumbnailComponent = __decorate([
+    core_1.Component({
+        selector: 'event-thumbnail',
+        template: "    \n        <div [routerLink]=\"['/events', event.id]\" class=\"well hoverwell thumbnail\">\n            <h2>{{event?.name}}</h2>\n            <div>Date: {{event?.date}}</div>\n            <div>Time: {{event?.time}}</div>\n            <div [ngSwitch]=\"event?.time\">\n                <span *ngSwitchCase=\"'8:00 am'\">Early Start</span>\n                <span *ngSwitchCase=\"'10:00 am'\">Late Start</span>\n                <span *ngSwitchDefault>Normal Start</span>\n            </div>\n            <div>Price: ${{event?.price}}</div>\n            <div [hidden]=\"!event?.location\">\n                <span>Location: {{event?.location?.address}}</span>\n                <span>&nbsp;</span>\n                <span>{{event?.location?.city}}, {{event?.location?.country}}</span>\n            </div>\n            <div *ngIf=\"event?.onlineUrl\">\n                Online URL: {{event?.onlineUrl}}\n            </div>\n        </div>    \n        ",
+        styles: ["\n        .thumbnail { min-height: 250px; }\n    "]
+    })
+], EventThumbnailComponent);
 exports.EventThumbnailComponent = EventThumbnailComponent;
 //# sourceMappingURL=event-thumbnail.component.js.map

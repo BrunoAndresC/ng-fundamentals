@@ -5,9 +5,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var CollapsibleWellComponent = /** @class */ (function () {
+var CollapsibleWellComponent = (function () {
     function CollapsibleWellComponent() {
         //@Input() title: string;
         this.visible = true;
@@ -15,27 +14,13 @@ var CollapsibleWellComponent = /** @class */ (function () {
     CollapsibleWellComponent.prototype.toggleContent = function () {
         this.visible = !this.visible;
     };
-    CollapsibleWellComponent = __decorate([
-        core_1.Component({
-            selector: 'collapsible-well',
-            template: "\n    <div (click)=\"toggleContent()\" class=\"well pointable\">\n    <h4>\n        <ng-content select=\"[well-title]\"></ng-content>\n    </h4>\n    <ng-content *ngIf=\"visible\" select=\"[well-body]\"></ng-content>\n    </div>\n    "
-            //    template: `
-            //    <div (click)="toggleContent()" class="well pointable">
-            //    <h4>
-            //        <ng-content select=".title"></ng-content>
-            //    </h4>
-            //    <ng-content *ngIf="visible" select=".body"></ng-content>
-            //    </div>
-            //    `
-            //    template: `
-            //    <div (click)="toggleContent()" class="well pointable">
-            //    <h4 class="well-title">{{title}}</h4>
-            //    <ng-content *ngIf="visible"></ng-content>
-            //    </div>
-            //    `
-        })
-    ], CollapsibleWellComponent);
     return CollapsibleWellComponent;
 }());
+CollapsibleWellComponent = __decorate([
+    core_1.Component({
+        selector: 'collapsible-well',
+        template: "\n    <div (click)=\"toggleContent()\" class=\"well pointable\">\n    <h4>\n        <ng-content select=\"[well-title]\"></ng-content>\n    </h4>\n    <ng-content *ngIf=\"visible\" select=\"[well-body]\"></ng-content>\n    </div>\n    "
+    })
+], CollapsibleWellComponent);
 exports.CollapsibleWellComponent = CollapsibleWellComponent;
 //# sourceMappingURL=collapsible-well.component.js.map

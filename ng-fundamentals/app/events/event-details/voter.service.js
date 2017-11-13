@@ -8,11 +8,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
 var Rx_1 = require("rxjs/Rx");
-var VoterService = /** @class */ (function () {
+var VoterService = (function () {
     function VoterService(http) {
         this.http = http;
     }
@@ -40,11 +39,11 @@ var VoterService = /** @class */ (function () {
     VoterService.prototype.handleError = function (error) {
         return Rx_1.Observable.throw(error.statusText);
     };
-    VoterService = __decorate([
-        core_1.Injectable(),
-        __metadata("design:paramtypes", [http_1.Http])
-    ], VoterService);
     return VoterService;
 }());
+VoterService = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [http_1.Http])
+], VoterService);
 exports.VoterService = VoterService;
 //# sourceMappingURL=voter.service.js.map

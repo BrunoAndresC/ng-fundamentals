@@ -69,3 +69,19 @@ function find(needle, haystack) {
 usage	--->	console.log(find(10,scores)); // [0, 3]
 
 https://i.imgflip.com/yhzjy.jpg
+
+*************************************************************************
+
+I did not isntall Karma globally. Instead I added the following in the packages.config, in the section decDependencies:
+
+	"karma-cli": "1.0.1",
+    "karma": "1.7.1",
+    "karma-chrome-launcher": "2.2.0",
+    "karma-jasmine": "1.1.0",
+    "jasmine-core": "2.8.0"
+
+then in the scripts section I added the following:
+
+	"test": "karma start"
+
+to run this from the console. Just put "npm test".

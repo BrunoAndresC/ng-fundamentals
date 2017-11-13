@@ -8,11 +8,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var auth_service_1 = require("../../user/auth.service");
 var voter_service_1 = require("./voter.service");
-var SessionListComponent = /** @class */ (function () {
+var SessionListComponent = (function () {
     function SessionListComponent(authService, voterService) {
         this.authService = authService;
         this.voterService = voterService;
@@ -28,24 +27,24 @@ var SessionListComponent = /** @class */ (function () {
     SessionListComponent.prototype.userHasVoted = function (session) {
         return this.voterService.userHasVoted(session, this.authService.currentUser.userName);
     };
-    __decorate([
-        core_1.Input(),
-        __metadata("design:type", Array)
-    ], SessionListComponent.prototype, "sessions", void 0);
-    __decorate([
-        core_1.Input(),
-        __metadata("design:type", Number)
-    ], SessionListComponent.prototype, "eventId", void 0);
-    SessionListComponent = __decorate([
-        core_1.Component({
-            selector: 'session-list',
-            templateUrl: 'app/events/event-details/session-list.component.html',
-            styles: ['collapsible-well h6 {margin-top:-5px; margin-bottom:10px }']
-        }),
-        __metadata("design:paramtypes", [auth_service_1.AuthService,
-            voter_service_1.VoterService])
-    ], SessionListComponent);
     return SessionListComponent;
 }());
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Array)
+], SessionListComponent.prototype, "sessions", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Number)
+], SessionListComponent.prototype, "eventId", void 0);
+SessionListComponent = __decorate([
+    core_1.Component({
+        selector: 'session-list',
+        templateUrl: 'app/events/event-details/session-list.component.html',
+        styles: ['collapsible-well h6 {margin-top:-5px; margin-bottom:10px }']
+    }),
+    __metadata("design:paramtypes", [auth_service_1.AuthService,
+        voter_service_1.VoterService])
+], SessionListComponent);
 exports.SessionListComponent = SessionListComponent;
 //# sourceMappingURL=session-list.component.js.map

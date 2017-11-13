@@ -8,11 +8,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var event_service_1 = require("../shared/event.service");
 var router_1 = require("@angular/router");
-var EventDetailsComponent = /** @class */ (function () {
+var EventDetailsComponent = (function () {
     function EventDetailsComponent(eventService, route, router) {
         this.eventService = eventService;
         this.route = route;
@@ -68,16 +67,16 @@ var EventDetailsComponent = /** @class */ (function () {
     EventDetailsComponent.prototype.cancelAddSession = function () {
         this.addMode = false;
     };
-    EventDetailsComponent = __decorate([
-        core_1.Component({
-            templateUrl: '/app/events/event-details/event-details.component.html',
-            styles: ["\n        .container { padding-left: 20px; padding-right: 20px; }\n        .event-image { height: 100px; }\n        em { float: right; color: #E05C65; padding-left: 10px; }\n        .error input { background-color: #E3C3C5; }\n        .error ::-webkit-input-placeholder { color: #999; }\n        a { cursor: pointer }\n    "]
-        }),
-        __metadata("design:paramtypes", [event_service_1.EventService,
-            router_1.ActivatedRoute,
-            router_1.Router])
-    ], EventDetailsComponent);
     return EventDetailsComponent;
 }());
+EventDetailsComponent = __decorate([
+    core_1.Component({
+        templateUrl: '/app/events/event-details/event-details.component.html',
+        styles: ["\n        .container { padding-left: 20px; padding-right: 20px; }\n        .event-image { height: 100px; }\n        em { float: right; color: #E05C65; padding-left: 10px; }\n        .error input { background-color: #E3C3C5; }\n        .error ::-webkit-input-placeholder { color: #999; }\n        a { cursor: pointer }\n    "]
+    }),
+    __metadata("design:paramtypes", [event_service_1.EventService,
+        router_1.ActivatedRoute,
+        router_1.Router])
+], EventDetailsComponent);
 exports.EventDetailsComponent = EventDetailsComponent;
 //# sourceMappingURL=event-details.component.js.map

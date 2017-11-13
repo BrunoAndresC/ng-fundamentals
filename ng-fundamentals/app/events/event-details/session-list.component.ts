@@ -10,6 +10,7 @@ import { VoterService } from './voter.service';
 })
 export class SessionListComponent {
     @Input() sessions: ISession[];
+    @Input() eventId: number;
 
     constructor(private authService: AuthService,
                 private voterService: VoterService) {
@@ -18,10 +19,10 @@ export class SessionListComponent {
 
     toggleVote(session: ISession) {
         if (this.userHasVoted(session)) {
-            this.voterService.deleteVoter(session, this.authService.currentUser.userName);
+            this.voterService.deleteVoter(this.eventId, session, this.authService.currentUser.userName).subscribe();
         }
         else {
-            this.voterService.addVoter(session, this.authService.currentUser.userName);
+            this.voterService.addVoter(this.eventId, session, this.authService.currentUser.userName).subscribe();
         }
     }
 

@@ -33,7 +33,7 @@
         </div>
     </div>
 
-    <session-list *ngIf="!addMode" [sessions]="event?.sessions"></session-list>
+    <session-list [eventId]="event?.id" *ngIf="!addMode" [sessions]="event?.sessions"></session-list>
     <session-create *ngIf="addMode" (saveNewSession)="saveNewSession($event)" (cancelAddSession)="cancelAddSession()"></session-create>
 
     <!--<session-list [sessions]="event?.sessions"></session-list>-->

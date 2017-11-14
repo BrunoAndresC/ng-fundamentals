@@ -8,23 +8,29 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var auth_service_1 = require("./user/auth.service");
-var EventsAppComponent = (function () {
+var EventsAppComponent = /** @class */ (function () {
     function EventsAppComponent(authService) {
         this.authService = authService;
     }
     EventsAppComponent.prototype.ngOnInit = function () {
         this.authService.checkAuthenticationStatus().subscribe();
     };
+    EventsAppComponent = __decorate([
+        core_1.Component({
+            selector: 'events-app',
+            template: "\n        <nav-bar></nav-bar>\n        <router-outlet></router-outlet>\n    "
+            //template: `
+            //    <nav-bar></nav-bar>
+            //    <events-list></events-list>
+            //`
+            //template: '<events-list></events-list>'
+        }),
+        __metadata("design:paramtypes", [auth_service_1.AuthService])
+    ], EventsAppComponent);
     return EventsAppComponent;
 }());
-EventsAppComponent = __decorate([
-    core_1.Component({
-        selector: 'events-app',
-        template: "\n        <nav-bar></nav-bar>\n        <router-outlet></router-outlet>\n    "
-    }),
-    __metadata("design:paramtypes", [auth_service_1.AuthService])
-], EventsAppComponent);
 exports.EventsAppComponent = EventsAppComponent;
 //# sourceMappingURL=events-app.component.js.map

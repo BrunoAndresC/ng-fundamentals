@@ -11,12 +11,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var forms_1 = require("@angular/forms");
 var auth_service_1 = require("./auth.service");
 var router_1 = require("@angular/router");
 var toastr_service_1 = require("../common/toastr.service");
-var ProfileComponent = (function () {
+var ProfileComponent = /** @class */ (function () {
     function ProfileComponent(authService, router, toastr) {
         this.authService = authService;
         this.router = router;
@@ -71,16 +72,27 @@ var ProfileComponent = (function () {
         //profileForm.controls.lastName.invalid && profileForm.controls.lastName.touched;
         return this.lastName.valid || this.lastName.untouched;
     };
+    ProfileComponent = __decorate([
+        core_1.Component({
+            templateUrl: 'app/user/profile.component.html',
+            styles: ["\n        em { float: right; color: #E05C65; padding-left: 10px; }\n        .error input { background-color: #E3C3C5; }\n        .error ::-webkit-input-placeholder { color: #999; }\n    "]
+            //template: `
+            //    <h1>Edit your profile</h1>
+            //    <hr>
+            //    <div class="col-md-6">
+            //        <h3>[Edit Profile will go here]</h3>
+            //        <br/>
+            //        <br/>
+            //        <button type="submit" class="btn btn-primary">Save</button>
+            //        <button type="button" class="btn btn-default">Cancel</button>
+            //    </div>       
+            //`
+        }),
+        __param(2, core_1.Inject(toastr_service_1.TOASTR_TOKEN)),
+        __metadata("design:paramtypes", [auth_service_1.AuthService,
+            router_1.Router, Object])
+    ], ProfileComponent);
     return ProfileComponent;
 }());
-ProfileComponent = __decorate([
-    core_1.Component({
-        templateUrl: 'app/user/profile.component.html',
-        styles: ["\n        em { float: right; color: #E05C65; padding-left: 10px; }\n        .error input { background-color: #E3C3C5; }\n        .error ::-webkit-input-placeholder { color: #999; }\n    "]
-    }),
-    __param(2, core_1.Inject(toastr_service_1.TOASTR_TOKEN)),
-    __metadata("design:paramtypes", [auth_service_1.AuthService,
-        router_1.Router, Object])
-], ProfileComponent);
 exports.ProfileComponent = ProfileComponent;
 //# sourceMappingURL=profile.component.js.map

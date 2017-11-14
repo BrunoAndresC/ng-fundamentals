@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var voter_service_1 = require("./voter.service");
 var Rx_1 = require("rxjs/Rx");
 describe('VoterService', function () {

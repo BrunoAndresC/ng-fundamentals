@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 //import { Injectable } from '@angular/core'
 var core_1 = require("@angular/core");
 exports.TOASTR_TOKEN = new core_1.OpaqueToken('toastr');

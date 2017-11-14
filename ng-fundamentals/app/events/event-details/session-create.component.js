@@ -8,10 +8,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var forms_1 = require("@angular/forms");
 var index_1 = require("../shared/index");
-var SessionCreateComponent = (function () {
+var SessionCreateComponent = /** @class */ (function () {
     function SessionCreateComponent() {
         this.saveNewSession = new core_1.EventEmitter();
         this.cancelAddSession = new core_1.EventEmitter();
@@ -63,22 +64,22 @@ var SessionCreateComponent = (function () {
     SessionCreateComponent.prototype.cancel = function () {
         this.cancelAddSession.emit();
     };
+    __decorate([
+        core_1.Output(),
+        __metadata("design:type", Object)
+    ], SessionCreateComponent.prototype, "saveNewSession", void 0);
+    __decorate([
+        core_1.Output(),
+        __metadata("design:type", Object)
+    ], SessionCreateComponent.prototype, "cancelAddSession", void 0);
+    SessionCreateComponent = __decorate([
+        core_1.Component({
+            selector: 'session-create',
+            templateUrl: 'app/events/event-details/session-create.component.html',
+            styles: ["\n        em { float: right; color: #E05C65; padding-left: 10px; }\n        .error input, .error select, .error textarea { background-color: #E3C3C5; }\n        .error ::-webkit-input-placeholder { color: #999; }\n    "]
+        })
+    ], SessionCreateComponent);
     return SessionCreateComponent;
 }());
-__decorate([
-    core_1.Output(),
-    __metadata("design:type", Object)
-], SessionCreateComponent.prototype, "saveNewSession", void 0);
-__decorate([
-    core_1.Output(),
-    __metadata("design:type", Object)
-], SessionCreateComponent.prototype, "cancelAddSession", void 0);
-SessionCreateComponent = __decorate([
-    core_1.Component({
-        selector: 'session-create',
-        templateUrl: 'app/events/event-details/session-create.component.html',
-        styles: ["\n        em { float: right; color: #E05C65; padding-left: 10px; }\n        .error input, .error select, .error textarea { background-color: #E3C3C5; }\n        .error ::-webkit-input-placeholder { color: #999; }\n    "]
-    })
-], SessionCreateComponent);
 exports.SessionCreateComponent = SessionCreateComponent;
 //# sourceMappingURL=session-create.component.js.map

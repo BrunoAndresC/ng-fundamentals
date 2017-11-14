@@ -8,10 +8,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var auth_service_1 = require("../user/auth.service");
 var index_1 = require("../events/shared/index");
-var NavBarComponent = (function () {
+var NavBarComponent = /** @class */ (function () {
     function NavBarComponent(authService, eventService) {
         this.authService = authService;
         this.eventService = eventService;
@@ -28,15 +29,15 @@ var NavBarComponent = (function () {
             console.log(_this.foundSessions);
         });
     };
+    NavBarComponent = __decorate([
+        core_1.Component({
+            selector: 'nav-bar',
+            templateUrl: 'app/nav/navbar.component.html'
+        }),
+        __metadata("design:paramtypes", [auth_service_1.AuthService,
+            index_1.EventService])
+    ], NavBarComponent);
     return NavBarComponent;
 }());
-NavBarComponent = __decorate([
-    core_1.Component({
-        selector: 'nav-bar',
-        templateUrl: 'app/nav/navbar.component.html'
-    }),
-    __metadata("design:paramtypes", [auth_service_1.AuthService,
-        index_1.EventService])
-], NavBarComponent);
 exports.NavBarComponent = NavBarComponent;
 //# sourceMappingURL=navbar.component.js.map

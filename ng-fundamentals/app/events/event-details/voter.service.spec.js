@@ -1,7 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var voter_service_1 = require("./voter.service");
-var Rx_1 = require("rxjs/Rx");
+var Observable_1 = require("rxjs/Observable");
+//import { Observable } from 'rxjs/Rx';
 describe('VoterService', function () {
     var voterService, mockHttp;
     beforeEach(function () {
@@ -11,14 +12,14 @@ describe('VoterService', function () {
     describe('deleteVoter', function () {
         it('shold remove the voter from the list of voters', function () {
             var session = { id: 6, voters: ["joe", "john"] };
-            mockHttp.delete.and.returnValue(Rx_1.Observable.of(false));
+            mockHttp.delete.and.returnValue(Observable_1.Observable.of(false));
             voterService.deleteVoter(3, session, "joe");
             expect(session.voters.length).toBe(1);
             expect(session.voters[0]).toBe("john");
         });
         it('shold call http.delete with the right URL', function () {
             var session = { id: 6, voters: ["joe", "john"] };
-            mockHttp.delete.and.returnValue(Rx_1.Observable.of(false));
+            mockHttp.delete.and.returnValue(Observable_1.Observable.of(false));
             voterService.deleteVoter(3, session, "joe");
             expect(mockHttp.delete).toHaveBeenCalledWith('/api/events/3/sessions/6/voters/joe');
         });
@@ -26,7 +27,7 @@ describe('VoterService', function () {
     describe('addVoter', function () {
         it('shold call http.post with the right URL', function () {
             var session = { id: 6, voters: ["john"] };
-            mockHttp.post.and.returnValue(Rx_1.Observable.of(false));
+            mockHttp.post.and.returnValue(Observable_1.Observable.of(false));
             voterService.addVoter(3, session, "joe");
             expect(mockHttp.post).toHaveBeenCalledWith('/api/events/3/sessions/6/voters/joe', "{}", jasmine.any(Object));
         });

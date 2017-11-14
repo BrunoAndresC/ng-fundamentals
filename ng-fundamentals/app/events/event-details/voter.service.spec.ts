@@ -1,6 +1,7 @@
 ﻿import { VoterService } from './voter.service';
 import { ISession } from '../shared/index';
-import { Observable } from 'rxjs/Rx';
+import { Observable } from 'rxjs/Observable';
+//import { Observable } from 'rxjs/Rx';
 
 describe('VoterService', () => {
     let voterService: VoterService,

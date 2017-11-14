@@ -1,7 +1,8 @@
 ﻿import { Injectable, EventEmitter } from '@angular/core';
 import { IEvent, ISession } from './event.model';
 import { Http, Response, Headers, RequestOptions, ResponseContentType } from '@angular/http';
-import { Observable } from 'rxjs/Rx';
+import { Observable } from 'rxjs/Observable';
+//import { Observable } from 'rxjs/Rx';
 
 @Injectable()
 export class EventService {

@@ -11,7 +11,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
-var Rx_1 = require("rxjs/Rx");
+var Observable_1 = require("rxjs/Observable");
+//import { Observable } from 'rxjs/Rx';
 var VoterService = /** @class */ (function () {
     function VoterService(http) {
         this.http = http;
@@ -38,7 +39,7 @@ var VoterService = /** @class */ (function () {
         return session.voters.some(function (voter) { return voter === voterName; });
     };
     VoterService.prototype.handleError = function (error) {
-        return Rx_1.Observable.throw(error.statusText);
+        return Observable_1.Observable.throw(error.statusText);
     };
     VoterService = __decorate([
         core_1.Injectable(),

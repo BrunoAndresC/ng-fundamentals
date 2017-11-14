@@ -17,7 +17,7 @@ var EventService = /** @class */ (function () {
         this.http = http;
     }
     EventService.prototype.getEvents = function () {
-        return this.http.get("/api/events")
+        return this.http.get('/api/events')
             .map(function (response) {
             //console.log(response.json());
             return response.json();

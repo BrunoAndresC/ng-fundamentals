@@ -90,6 +90,7 @@
     <Content Include="readme.MD" />
     <Content Include="tsconfig.json" />
     <Content Include="package.json" />
+    <Content Include="tslint.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

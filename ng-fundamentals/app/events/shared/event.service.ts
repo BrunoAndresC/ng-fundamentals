@@ -10,7 +10,7 @@ export class EventService {
     }
 
     getEvents(): Observable<IEvent[]> {
-        return this.http.get("/api/events")
+        return this.http.get('/api/events')
             .map((response: Response) => {
                 //console.log(response.json());
                 return <IEvent[]>response.json();

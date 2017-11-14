@@ -72,7 +72,7 @@ https://i.imgflip.com/yhzjy.jpg
 
 *************************************************************************
 
-I did not isntall Karma globally. Instead I added the following in the packages.config, in the section decDependencies:
+I did not install Karma globally. Instead I added the following in the packages.config, in the section decDependencies:
 
 	"karma-cli": "1.0.1",
     "karma": "1.7.1",
@@ -85,3 +85,33 @@ then in the scripts section I added the following:
 	"test": "karma start"
 
 to run this from the console. Just put "npm test".
+
+*************************************************************************
+
+I installed tslint locallty. I added the following in the packages.config, in the section decDependencies:
+
+	"tslint": "5.8.0"
+
+then to create the tslint.json I run the following command from the console:
+
+	node_modules/.bin/tslint --init
+
+*************************************************************************
+
+Listing globally installed NPM packages and version
+
+npm list -g --depth=0
+
+https://ponderingdeveloper.com/2013/09/03/listing-globally-installed-npm-packages-and-version/
+
+*************************************************************************
+
+In the scripts section I added the following:
+
+	"lint": "tslint app/**/*.ts -t verbose"
+	//"lint": "node_modules/.bin/tslint app/**/*.ts -t verbose"
+
+to run this from the console. Just put "npm run lint".
+
+*************************************************************************
+

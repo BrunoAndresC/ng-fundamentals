@@ -120,7 +120,8 @@
     <TypeScriptCompile Include="app\events\event-details\event-details.component.ts" />
     <TypeScriptCompile Include="app\events\event-details\event-route-activator.service.ts" />
     <TypeScriptCompile Include="app\events\event-details\session-create.component.ts" />
-    <TypeScriptCompile Include="app\events\event-details\session-list.component.spec.ts" />
+    <TypeScriptCompile Include="app\events\event-details\session-list.component.integrated.spec.ts" />
+    <TypeScriptCompile Include="app\events\event-details\session-list.component.isolated.spec.ts" />
     <TypeScriptCompile Include="app\events\event-details\session-list.component.ts" />
     <TypeScriptCompile Include="app\events\event-details\upvote.component.ts" />
     <TypeScriptCompile Include="app\events\event-details\voter.service.spec.ts" />

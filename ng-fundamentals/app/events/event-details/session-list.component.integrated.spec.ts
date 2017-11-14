@@ -53,7 +53,8 @@ describe('SessionListComponent', () => {
             ];
             component.eventId = 4;
 
-            expect(element.querySelector('[well-title]').textContent).toContain('Session 1');
+            //expect(element.querySelector('[well-title]').textContent).toContain('Session 1');
+            expect(debugElem.query(By.css('[well-title]')).nativeElement.textContent).toContain('Session 1');
         })
     })
 })

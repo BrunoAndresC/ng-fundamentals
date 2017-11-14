@@ -6,6 +6,7 @@ var upvote_component_1 = require("./upvote.component");
 var collapsible_well_component_1 = require("../../common/collapsible-well.component");
 var auth_service_1 = require("../../user/auth.service");
 var voter_service_1 = require("./voter.service");
+var platform_browser_1 = require("@angular/platform-browser");
 describe('SessionListComponent', function () {
     var component;
     var fixture;
@@ -45,7 +46,8 @@ describe('SessionListComponent', function () {
                 { id: 3, name: 'Session 1', presenter: 'Joe', duration: 1, level: 'beginner', abstract: 'abstract', voters: ['john', 'bob'] }
             ];
             component.eventId = 4;
-            expect(element.querySelector('[well-title]').textContent).toContain('Session 1');
+            //expect(element.querySelector('[well-title]').textContent).toContain('Session 1');
+            expect(debugElem.query(platform_browser_1.By.css('[well-title]')).nativeElement.textContent).toContain('Session 1');
         });
     });
 });
